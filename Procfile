@@ -1,0 +1,1 @@
+web: gunicorn fodmap_recipes.wsgi
