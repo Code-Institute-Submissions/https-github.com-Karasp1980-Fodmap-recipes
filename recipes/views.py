@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
 
 
-class PostRecipe(generic.ListView):
+
+
+class HomePage(generic.ListView):
     """
     all_recipes view
     """
@@ -12,14 +15,23 @@ class PostRecipe(generic.ListView):
     template_name = 'index.html'
     paginate_by = 6
 
+
+class AboutPage(generic.TemplateView):
+    """
+    about view
+    """
+    template_name = 'about.html'
+
+
     
-class RecipeDetails(View):
+class RecipeDetail(View):
     """ Recipe details page """
 
     def get(self, request, slug):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments_post_name.order_by('published_on')
+        #comments = Comment.objects.all(post__id=post.id).order_by('published_on')
+        comments = Comment.objects.filter(post__id=post.id).order_by('published_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
