@@ -10,26 +10,42 @@
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
-                <!-- The featured image URL goes in the src attribute -->
-                {% if "placeholder" in post.featured_image.url %}
-                <img src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg" width="100%">
+                
+                {% if "placeholder" in post.image.url %}
+                <img src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" width="100%">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.image.url }}" width="100%">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
+
 <div class="container">
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
-                <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
-                <p class="card-text ">
-                    {{ post.content | safe }}
-                </p>
+                <div class="card-body">
+                    <p class="card-text">{{ post.description | safe }}</p>
+                </div>
+
+                <div class="card-body">
+                    <h4>Ingredients:</h4>
+                    <p class="card-text">{{ post.ingredients | safe }}</p>
+                </div>
+
+                <div class="card-body">
+                    <h4>Preparation steps:</h4>
+                    <p class="card-text">{{ post.preparation_steps | safe }}</p>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                
                 <div class="row">
 
                     <div class="col-1">
@@ -47,11 +63,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <hr>
-        </div>
-    </div>
+   
     <div class="row">
         <div class="col-md-8 card mb-4  mt-3 ">
             <h3>Comments:</h3>
@@ -76,7 +88,7 @@
         </div>
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- For later -->
+                
             </div>
         </div>
     </div>
