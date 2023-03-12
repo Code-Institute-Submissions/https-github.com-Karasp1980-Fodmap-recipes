@@ -7,25 +7,9 @@
         <div class="row">
             <div class="col col-title text-center">
                     <h1 class="text-center title"> Welcome to Fodmap recipes</h1>
-                    <br>
                     <p class="display-6">The ultimate site to find and share delicious recipes</p>
-                    <p class="display-6">for IBS and sensitive stomach treatment</p>
+                    <p class="display-6">for IBS och sensitive stomach treatment</p>
                     <hr>
-                    {% if user.is_authenticated %}
-                    <a href="">
-                        <button class="btn btn-warning btn-login-register">Logout</button>
-                    </a>
-
-                    {% else %}
-                    <a href=""
-                         class="btn btn-warning btn-login-register">Login/Register
-                    </a>
-                    {% endif %}
-                   
-
-                    
-                   
-                   
                    
    
             </div>
@@ -34,9 +18,7 @@
 </section>
 
 
-
 <section>
-    <h3 id="latest-recipes">Latest recipes:</h3>
     <div class="container-fluid">
         <div class="row">
 
@@ -48,11 +30,11 @@
                         <div class="card mb-4">
                             <div class="card-body">
                                 <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
+                                    {% if "placeholder" in post.image.url %}
                                     <img class="card-img-top"
-                                        src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                        src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg">
                                     {% else %}
-                                    <img class="card-img-top" img-fit" height="250px" src=" {{ post.image.url }}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
@@ -93,3 +75,4 @@
     </div>
 </section>
 {%endblock%}
+

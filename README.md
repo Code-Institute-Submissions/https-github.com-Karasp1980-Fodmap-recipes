@@ -128,6 +128,8 @@
 
 #### The following sites has also been helpful:
 * [W3Schools](https://www.w3schools.com/) 
+* [Cleveland clinic](https://my.clevelandclinic.org/health/treatments/22466-low-fodmap-diet) 
+* [Monash University](https://www.monashfodmap.com) 
  
 
 

@@ -158,12 +158,12 @@ navbar {
 
 /* Welcome title */
 .col-title{
-    padding: 40px 15px;
+    padding: 40px 50px;
     
     background-color: rgb(73 69 65 / 55%);
-    border-radius: 5px;
-    
+    border-radius: 20px;   
 }
+
 .title{
     font-size: 50px;
     font-family: 'Lobster', sans-serif;
@@ -181,3 +181,50 @@ navbar {
 #latest-recipes{
     margin: 3% 2% 1% 2%; 
 }
+
+
+/* about page */
+.about-image{
+    background: no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.col-about-title{
+    padding: 50px;  
+    background-color: rgb(73 69 65 / 55%);
+    border-radius: 20px;   
+    margin: 10%;
+}
+
+
+#low-fodmap{
+    padding: 50px;  
+    background-color: rgb(39, 164, 76);
+    border-radius: 20px;   
+    margin: 0% 10% 0% 10%;
+    color: white;
+}
+
+#high-fodmap{
+    padding: 50px;  
+    background-color: rgb(217, 68, 68);
+    border-radius: 20px;   
+    margin: 0% 10% 0% 10%;
+    color: white;
+}
+
+#foodmap-foods{
+    font-family: 'Lobster', sans-serif;
+    padding: 0;
+}
+
+.foods{
+    font-family: 'Oswald', sans-serif;
+    padding: 1% 0 0 0;
+}
+
