@@ -228,3 +228,15 @@ body {
     padding: 1% 0 0 0;
 }
 
+/* Sign in page */
+
+.signin-image{
+    background: no-repeat center center fixed;
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
