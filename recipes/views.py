@@ -27,7 +27,7 @@ class AboutPage(generic.TemplateView):
 class RecipeDetails(View):
     """ Recipe details page """
 
-    def get(self, request, slug):
+    def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
         comments = Comment.objects.filter(post__id=post.id).order_by('published_on')
@@ -41,7 +41,39 @@ class RecipeDetails(View):
             {
                 "post": post,
                 "comments": comments,
+                "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
             }
+        )
+        
+    def post(self, request, slug, *args, **kwargs):
+
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-published_on")
+        liked = False
+        if post.likes.filter(id=self.request.user.id).exists():
+            liked = True
+
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment_form.instance.email = request.user.email
+            comment_form.instance.name = request.user.username
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+        else:
+            comment_form = CommentForm()
+
+        return render(
+            request,
+            "recipe_details.html",
+            {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+                "liked": liked
+            },
         )

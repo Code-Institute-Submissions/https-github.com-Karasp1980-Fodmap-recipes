@@ -47,9 +47,7 @@ The site should be both inspiering and informative and make it easy to find tast
 
 [Credit](#credits)
 
-- [Online resources](#online-resources)
-- [Tutorials and inspiration](#tutorials-and-inspiration)
-- [People](#people)
+
 
 ## UX
 
@@ -63,23 +61,17 @@ GitHub issues were used to record the user stories. The user stories were catego
 
 ### Wireframes
 
-Wireframes
+All wireframes are made using [Balsamiq](https://balsamiq.com/)
 
-#### Mobile and Desktop device
+Wireframes for each device are linked here:
+- [Desktop](assets/documents/Desktop-wireframes)
+- [Tablet](assets/documents/Tablet-wireframes)
+- [Mobile](assets/documents/Mobile-wireframes)
 
-![wireframe mobile and desktop device]()
-
-##### Detail page
-
-![Wireframe detail page]()
-
-##### User register view
-
-![Wireframe user register view]()
-
-##### User create post view
-
-![Wireframe user create post]()
+### Database scheme
+<p align="center">
+<img src="" width="900" height="100%">
+</p>
 
 ### Agile Methodology
 
