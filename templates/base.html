@@ -24,7 +24,7 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'assets/images/recipe-icon-small.png' %}" alt="Logo" /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}"><i class="fa fa-home fa-fw mr-1"></i> Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About Fodmap</a>
@@ -43,19 +43,42 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
+                    
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        {% endif %}
                     </li>
-                    {% endif %}
 
+                    <!--if user is authenticated-->
+                    {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Favourite Recipes</a>
+                            <a class="dropdown-item" href="#">Your Recipes</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="dropdown-item" href="{% url 'add_recipe' %}">Add recipe</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-warning btn-login-register" id="recipe-btn" href="{% url 'add_recipe' %}">Add Recipe</a>
+                    </li>
+
+                   
+                    {% endif %}
+                   
                 </ul>
             </div>
         </div>
     </nav>
+
 
     <main class="flex-shrink-0 main-bg">
         {% block content %}

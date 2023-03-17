@@ -77,3 +77,36 @@ class RecipeDetails(View):
                 "liked": liked
             },
         )
+
+
+class AddRecipe(View):
+    """ add recipe"""
+    def get(self, request):
+        """What happens for a GET request"""
+        return render(
+            request, "add_recipe.html", {"recipe_form": RecipeForm()})
+
+    def post(self, request):
+        """What happens for a POST request"""
+        recipe_form = RecipeForm(request.POST, request.FILES)
+
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            recipe.author = request.user
+            recipe.slug = slugify('-'.join([recipe.title,
+                                            str(recipe.author)]),
+                                  allow_unicode=False)
+            recipe.save()
+            return redirect('')
+        else:
+            messages.error(self.request, 'Please complete all required fields')
+            recipe_form = RecipeForm()
+
+        return render(
+            request,
+            "add_recipe.html",
+            {
+                "recipe_form": recipe_form
+
+            },
+        )        
