@@ -39,6 +39,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">About Fodmap</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'all_recipes' %}">Recipes</a>
+                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>

@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from .models import Post, Comment
-from .forms import CommentForm
-
+from .forms import CommentForm, RecipeForm
+from django.utils.text import slugify
+from django.shortcuts import redirect
 
 
 
@@ -78,6 +79,14 @@ class RecipeDetails(View):
             },
         )
 
+class AllRecipes(generic.ListView):
+    """
+    all_recipes view
+    """
+    model = Post
+    queryset = Post.objects.order_by('-published_on')
+    template_name = 'all_recipes.html'
+    paginate_by = 6
 
 class AddRecipe(View):
     """ add recipe"""
@@ -97,7 +106,8 @@ class AddRecipe(View):
                                             str(recipe.author)]),
                                   allow_unicode=False)
             recipe.save()
-            return redirect('')
+        
+            return redirect('recipe_detail', recipe.slug)
         else:
             messages.error(self.request, 'Please complete all required fields')
             recipe_form = RecipeForm()
