@@ -4,6 +4,7 @@ from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
 from django.utils.text import slugify
 from django.shortcuts import redirect
+from django.views.generic.edit import UpdateView
 
 
 
@@ -119,4 +120,12 @@ class AddRecipe(View):
                 "recipe_form": recipe_form
 
             },
-        )        
+        )  
+
+class EditRecipe(UpdateView):
+    """ Edit Recipe """
+    model = Post
+    template_name = 'edit_recipe.html'
+    form_class = RecipeForm        
+
+
