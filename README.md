@@ -335,12 +335,16 @@ pip3 install -r requirements.txt
 ## The recipes are taken from:
 [BBC good food](https://www.bbcgoodfood.com)
 
-#### The following sites has also been helpful:
-* [W3Schools](https://www.w3schools.com/) 
+## The facts about Fodmap were taken from:
 * [Cleveland clinic](https://my.clevelandclinic.org/health/treatments/22466-low-fodmap-diet) 
 * [Monash University](https://www.monashfodmap.com) 
+
+#### The following sites has also been helpful:
+* [W3Schools](https://www.w3schools.com/) 
 * [P4 News](https://github.com/mamuzaan/Portfolio-P4-News) 
 * [The Healthy Family](https://github.com/Iris-Smok/The-Healthy-Family-PP4) 
+* [Django project](https://docs.djangoproject.com/) 
+
 
 
 

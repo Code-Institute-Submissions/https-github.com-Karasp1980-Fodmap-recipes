@@ -90,8 +90,8 @@ class AllRecipes(generic.ListView):
     template_name = 'all_recipes.html'
     paginate_by = 6
 
-class YourRecipes(View):
-    """ view for user recipes page"""
+class MyRecipes(View):
+    """ view for users recipes page"""
 
     def get(self, request):
         """your_recipes view, get method"""
@@ -102,9 +102,9 @@ class YourRecipes(View):
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             return render(
-                request, 'your_recipes.html', {"page_obj": page_obj, })
+                request, 'my_recipes.html', {"page_obj": page_obj, })
         else:
-            return render(request, 'your_recipes.html')
+            return render(request, 'my_recipes.html')
 
 
 class AddRecipe(View):
@@ -150,5 +150,4 @@ def delete_recipe(request, post_id):
     """Deletes recipe"""
     post = get_object_or_404(Post, id=post_id)
     post.delete()
-    return redirect(reverse(
-        'your_recipes'))
+    return redirect(reverse('my_recipes'))
