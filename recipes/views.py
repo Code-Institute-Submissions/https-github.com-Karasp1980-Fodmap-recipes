@@ -5,6 +5,7 @@ from .forms import CommentForm, RecipeForm
 from django.utils.text import slugify
 from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView
+from django.core.paginator import Paginator
 
 
 
@@ -89,6 +90,23 @@ class AllRecipes(generic.ListView):
     template_name = 'all_recipes.html'
     paginate_by = 6
 
+class YourRecipes(View):
+    """ view for user recipes page"""
+
+    def get(self, request):
+        """your_recipes view, get method"""
+        if request.user.is_authenticated:
+            post = Post.objects.filter(author=request.user)
+
+            paginator = Paginator(post, 6)  # 6 recipes per page showing
+            page_number = request.GET.get('page')
+            page_obj = paginator.get_page(page_number)
+            return render(
+                request, 'your_recipes.html', {"page_obj": page_obj, })
+        else:
+            return render(request, 'your_recipes.html')
+
+
 class AddRecipe(View):
     """ add recipe"""
     def get(self, request):
@@ -128,4 +146,9 @@ class EditRecipe(UpdateView):
     template_name = 'edit_recipe.html'
     form_class = RecipeForm        
 
-
+def delete_recipe(request, post_id):
+    """Deletes recipe"""
+    post = get_object_or_404(Post, id=post_id)
+    post.delete()
+    return redirect(reverse(
+        'your_recipes'))

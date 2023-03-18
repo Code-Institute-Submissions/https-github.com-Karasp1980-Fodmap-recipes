@@ -42,19 +42,25 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'all_recipes' %}">Recipes</a>
                     </li>
+
+                    <!--if user is authenticated-->
                     {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'your_recipes' %}">Your recipes</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
-                    
+                     <!--if user is not authenticated-->
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                        {% endif %}
                     </li>
+                    {% endif %}
+                    
 
                     <!--if user is authenticated-->
                     {% if user.is_authenticated %}
@@ -64,7 +70,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Favourite Recipes</a>
-                            <a class="dropdown-item" href="#">Your Recipes</a>
+                            <a class="dropdown-item" href="{% url 'your_recipes' %}">Your Recipes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                             <a class="dropdown-item" href="{% url 'add_recipe' %}">Add recipe</a>
