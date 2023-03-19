@@ -3,6 +3,7 @@
 
 body {
     background-color: white;
+    font-family: 'Oswald', sans-serif;
     
 }
 
@@ -191,7 +192,7 @@ body {
 .about-image{
     background: no-repeat center center fixed;
     background-size: cover;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;

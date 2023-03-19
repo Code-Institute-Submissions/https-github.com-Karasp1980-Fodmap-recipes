@@ -47,6 +47,9 @@
                     {% if user.is_authenticated %}
                     
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'my_recipes' %}">My recipes</a>
                     </li>
                     <li class="nav-item">
@@ -71,6 +74,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="#">Favourite Recipes</a>
+                            <a class="dropdown-item" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
                             <a class="dropdown-item" href="{% url 'my_recipes' %}">My recipes</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
