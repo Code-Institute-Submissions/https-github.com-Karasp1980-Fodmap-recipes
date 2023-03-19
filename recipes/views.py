@@ -4,7 +4,7 @@ from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
 from django.utils.text import slugify
 from django.shortcuts import redirect
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
 
 
@@ -158,10 +158,11 @@ class EditRecipe(UpdateView):
     """ Edit Recipe """
     model = Post
     template_name = 'edit_recipe.html'
-    form_class = RecipeForm        
+    form_class = RecipeForm 
+    success_url = "/"       
 
-def delete_recipe(request, post_id):
-    """Deletes recipe"""
-    post = get_object_or_404(Post, id=post_id)
-    post.delete()
-    return redirect(reverse('my_recipes'))
+class DeleteRecipe(DeleteView):
+    """ Delete Recipe """
+    model = Post
+    template_name = 'delete_recipe.html'
+    success_url = "/"       
