@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
+from django.http import HttpResponseRedirect
 
 
 
@@ -166,3 +167,15 @@ class DeleteRecipe(DeleteView):
     model = Post
     template_name = 'delete_recipe.html'
     success_url = "/"       
+
+
+class PostLike(View):
+    
+    def post(self, request, slug):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+        else:
+            post.likes.add(request.user)
+
+        return HttpResponseRedirect(reverse('recipe_details', args=[slug]))

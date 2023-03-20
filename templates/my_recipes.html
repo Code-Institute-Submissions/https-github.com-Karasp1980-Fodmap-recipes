@@ -9,7 +9,7 @@
          <hr>
       </div>
       <div class="col-12 text-center mt-2">
-         <a href="{% url 'add_recipe' %}"><button class="btn-lg btn-warning mb-2" >Add Recipe  <i class="fas fa-plus-square ml-3"></i></button></a>
+         <a href="{% url 'add_recipe' %}"><button class="btn-lg btn-warning mb-2" >Add Recipe  <i class="fas fa-edit ml-3"></i></button></a>
       </div>
    </div>
 </div>
@@ -44,8 +44,8 @@
                                 {{ post.number_of_likes }}
                         
                        
-                            <a href="{% url 'edit_recipe' post.id %}"><button class="btn-sm btn-success ">Edit</button></a>
-                            <a href="{% url 'delete_recipe' post.id %}"><button class="btn-sm btn-danger ">Delete</button></a>   
+                            <a href="{% url 'edit_recipe' post.id %}"><button class="btn-sm btn-success edit-buttons ">Edit</button></a>
+                            <a href="{% url 'delete_recipe' post.id %}"><button class="btn-sm btn-danger delete-buttons">Delete</button></a>   
                             
                              </p>   
                         </div>

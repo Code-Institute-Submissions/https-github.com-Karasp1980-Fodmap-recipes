@@ -238,3 +238,19 @@ body {
     font-size: 50px;
     font-family: 'Lobster', sans-serif;
 }
+
+.edit-buttons{
+    margin: 0 1% 0 5%;
+    padding: 1% 5%;
+}
+
+.delete-buttons{
+    margin: 0 1%;
+    padding: 1% 5%;
+}
+
+.all-recipe-btn{
+    background-color: #A43F2D;
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
