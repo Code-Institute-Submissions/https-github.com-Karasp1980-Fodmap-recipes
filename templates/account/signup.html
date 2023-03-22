@@ -6,20 +6,20 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid userlog-image" style="background-image:url('https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg') ;">
   <div class="row">
-     <div class="col-12 text-center mt-5">
-      <h2 class="recipe-title">{% trans "Sign Up" %}</h1>
-      <hr>
-      <p>{% blocktrans %}Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
-
-      <form class="signup text-center" id="signup_form" method="post" action="{% url 'account_signup' %}">
+    <div class="col col-title text-center">
+      <h2 class="title">{% trans "Sign Up" %}</h2>
+      <br>
+      <p class="display-6">{% blocktrans %}Already have an account? Then please <a class="link text-white" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+      <br>
+      <form class="signup text-center text-white" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+        <button class="btn btn-warning right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+      </form>
 
 {% endblock %}

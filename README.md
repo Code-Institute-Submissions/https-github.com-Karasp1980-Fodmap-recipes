@@ -3,7 +3,7 @@
 # Welcome to Fodmap recipes!
 #### This is a site that provides Fodmap diet recipes. 
 
-The site should be both inspiering and informative and make it easy to find tasty recipes. The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at the recipes uploaded and the About Fodmap site is open to all users. The site provides healthy recipes beneficial to all users and ages, and weather you follow the Fodmap diet or not.
+The site should be both inspiering and informative and make it easy to find tasty recipes.  The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at the recipes uploaded and the About Fodmap site is open to all users. The site provides healthy recipes beneficial to all users and ages, and weather you follow the Fodmap diet or not.
 
 #### [Deployed site](https://fodmap-recipes.herokuapp.com/)
 ------
@@ -88,7 +88,7 @@ The navbar
 
 ### Home Page
 
-The home page consists of a welcome hero image with a yellow clear login/register button (or when already logged in, a logout button). The hero image should be inviting.
+The home page consists of a welcome hero image with a yellow clear login/register button (or when already logged in, a logout button). The hero image should be colorfol and inviting.
 
 ![home page image]()
 
@@ -331,9 +331,12 @@ pip3 install -r requirements.txt
 #### Inspiration and help has also come from the Code Institute projects [Hello Django]() and [I think therefore I blog]() .
 
 ### The image used are taken from:
-[Pixbay](https://pixabay.com/)
+* [Pixbay](https://pixabay.com/)
+* [Monash University](https://www.monashfodmap.com) 
+
 ## The recipes are taken from:
-[BBC good food](https://www.bbcgoodfood.com)
+* [BBC good food](https://www.bbcgoodfood.com)
+* [Monash University](https://www.monashfodmap.com) 
 
 ## The facts about Fodmap were taken from:
 * [Cleveland clinic](https://my.clevelandclinic.org/health/treatments/22466-low-fodmap-diet) 
