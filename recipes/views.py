@@ -160,13 +160,14 @@ class EditRecipe(UpdateView):
     model = Post
     template_name = 'edit_recipe.html'
     form_class = RecipeForm 
-    success_url = "/"       
+    success_url = "/my_recipes"
 
 class DeleteRecipe(DeleteView):
     """ Delete Recipe """
     model = Post
     template_name = 'delete_recipe.html'
-    success_url = "/"       
+    success_url = "/my_recipes"    
+
 
 
 class PostLike(View):

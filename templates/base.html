@@ -43,19 +43,24 @@
                         <a class="nav-link" href="{% url 'all_recipes' %}">Recipes</a>
                     </li>
 
-                    <!--if user is authenticated-->
+                    <!--if user is authenticated-->    
                     {% if user.is_authenticated %}
-                    
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Welcome {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a id="dropdown-items" class="dropdown-item" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
+                            <a id="dropdown-items" class="dropdown-item" href="{% url 'my_recipes' %}">My recipes</a>
+                            <a id="dropdown-items" class="dropdown-item" href="{% url 'add_recipe' %}">Add recipe</a>
+                            <div class="dropdown-divider"></div>
+                            <a id="dropdown-items" class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                        </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_recipes' %}">My recipes</a>
+                        <a class="nav-link btn btn-warning btn-login-register" id="recipe-btn" href="{% url 'add_recipe' %}">Add Recipe   <i class="fas fa-edit ml-3"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                     <!--if user is not authenticated-->
+
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
@@ -63,29 +68,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
-                    {% endif %}
-                    
-
-                    <!--if user is authenticated-->
-                    {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Welcome {{ user.username }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Favourite Recipes</a>
-                            <a class="dropdown-item" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
-                            <a class="dropdown-item" href="{% url 'my_recipes' %}">My recipes</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                            <a class="dropdown-item" href="{% url 'add_recipe' %}">Add recipe</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-warning btn-login-register" id="recipe-btn" href="{% url 'add_recipe' %}">Add Recipe   <i class="fas fa-edit ml-3"></i></a>
-                    </li>
-
-                   
                     {% endif %}
                    
                 </ul>
@@ -101,7 +83,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
+    <footer class="footer mt-auto py-3 dark-bg page-footer">
         <p class="m-0 text-center text-white">Follow us: 
             <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-instagram-square ms-3"></i>

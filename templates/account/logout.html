@@ -5,21 +5,22 @@
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row">
-     <div class="col-12 text-center mt-5">
-      
-      <h2 class="recipe-title">{% trans "Sign Out" %}</h1>
-      <hr>
-      <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
-      <form method="post" action="{% url 'account_logout' %}">
-        {% csrf_token %}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-        {% endif %}
-        <button class="btn btn-signup right" type="submit">{% trans 'Sign Out' %}</button>
-      </form>
+<div class="container-fluid userlog-image" style="background-image:url('https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg') ;">
+  <div class="row">
+      <div class="col col-title text-center">
+              <h2 class="title">{% trans "Sign Out" %}</h2>
+              <br>
+              <p class="display-6">{% trans 'Are you sure you want to sign out?' %}</p>
+              <br>
+              <form method="post" action="{% url 'account_logout' %}">
+                {% csrf_token %}
+                {% if redirect_field_value %}
+                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                <button class="btn btn-warning right" type="submit">{% trans 'Sign Out' %}</button>
+              </form>
+      </div>
   </div>
 </div>
 

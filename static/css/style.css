@@ -11,7 +11,7 @@ body {
 .navbar {
     background-color: #A43F2D !important;
     color: #fff !important;
-   
+    border: 2px groove;
 }
 
 .nav-item a {
@@ -20,6 +20,10 @@ body {
 
 .nav-item a:hover {
     color:  #445261 !important;
+}
+
+#dropdown-items{
+    color: #A43F2D !important;
 }
 
 #recipe-btn {
@@ -38,10 +42,15 @@ body {
     background-color: white;
 }
 
+.page-footer{
+    border: 2px groove;
+}
+
 .card {
     border: none;
     background-color: transparent;
 }
+
 
 .image-container {
     position: relative;
@@ -189,7 +198,7 @@ body {
 
 
 /* about page */
-.fodmap-image{
+.about-image{
     background: no-repeat center center fixed;
     background-size: cover;
     height: auto;
@@ -254,3 +263,15 @@ body {
     font-family: 'Oswald', sans-serif;
     color: white;
 }
+
+
+.userlog-image{
+    background: no-repeat center center fixed;
+    background-size: cover;
+    height: 83vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+

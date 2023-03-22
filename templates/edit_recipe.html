@@ -17,10 +17,12 @@
          <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p}}
+            <br>
             <button class="btn btn-success right mb-2" type="submit" >Edit Post <i class="fas fa-edit ml-3"></i></button>
          </form>
       </div>
    </div>
 </div>
+<br>
 {% endif %}
 {%endblock%}
