@@ -1,10 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&display=swap');
 
 body {
     background-color: white;
     font-family: 'Oswald', sans-serif;
-    
+    margin: 0;
+    padding: 0;
 }
 
 /* navbar */
@@ -12,6 +12,7 @@ body {
     background-color: #A43F2D !important;
     color: #fff !important;
     border: 2px groove;
+    padding: 0 5%;
 }
 
 .nav-item a {
@@ -30,9 +31,6 @@ body {
     color:  #445261 !important;
 }
 
-.light-bg {
-    background-color: #fff;
-}
 
 .dark-bg {
     background-color: #A43F2D;
@@ -44,13 +42,26 @@ body {
 
 .page-footer{
     border: 2px groove;
+    font-size: 20px;  
+    color: white;
+    background-color: #A43F2D;
 }
+.page-footer p{
+    font-family: 'Lobster', sans-serif; 
+    padding: 0;
+    color: white;   
+}
+
+.page-footer a{
+        color: white;
+        padding: 0 3% 0 3%;
+}
+
 
 .card {
     border: none;
     background-color: transparent;
 }
-
 
 .image-container {
     position: relative;
@@ -196,7 +207,6 @@ body {
     margin: 3% 2% 1% 2%; 
 }
 
-
 /* about page */
 .about-image{
     background: no-repeat center center fixed;
@@ -215,6 +225,14 @@ body {
     margin: 10%;
 }
 
+#fodmap-steps{
+    padding: 50px;  
+    background-color: white;
+    border-radius: 20px;   
+    margin: 0% 10% 0% 10%;
+    color: white;
+    text-align: center;
+}
 
 #low-fodmap{
     padding: 50px;  
@@ -242,10 +260,15 @@ body {
     padding: 1% 0 0 0;
 }
 
-
 .recipe-title{
     font-size: 50px;
     font-family: 'Lobster', sans-serif;
+}
+
+.latest-recipes{
+    font-size: 25px;
+    font-family: 'Lobster', sans-serif;
+    margin: 3% 0 0 1%;
 }
 
 .edit-buttons{
@@ -264,7 +287,6 @@ body {
     color: white;
 }
 
-
 .userlog-image{
     background: no-repeat center center fixed;
     background-size: cover;
@@ -274,4 +296,6 @@ body {
     align-items: center;
     position: relative;
 }
+
+
 

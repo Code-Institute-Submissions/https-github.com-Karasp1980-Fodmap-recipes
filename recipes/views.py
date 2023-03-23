@@ -180,3 +180,24 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('recipe_details', args=[slug]))
+
+
+class SearchRecipe(View):
+    """ Search recipes view"""
+
+    def get(self, request):
+        """get method"""
+        return render(request, 'search.html')
+
+    def post(self, request):
+        """ post method"""
+        searched = request.POST.get('searched')
+        post = Post.objects.filter(title__icontains=searched)
+        paginator = Paginator(post, 6)  # Show 6 recipes per page
+        page_number = request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+        context = {
+            'page_obj': page_obj,
+            'searched': searched
+        }
+        return render(request, 'search.html', context)

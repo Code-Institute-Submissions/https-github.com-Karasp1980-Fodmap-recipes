@@ -31,7 +31,9 @@
 <section>
     <div class="container-fluid">
         <div class="row">
-
+            <div>
+                <h3 class="text-left latest-recipes">Recently added recipes:</h3>
+            </div>
             <!-- Recipe Blog Entries Column -->
             <div class="col-12 mt-3 left">
                 <div class="row">
@@ -44,7 +46,7 @@
                                     <img class="card-img-top"
                                         src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg">
                                     {% else %}
-                                    <img class="card-img-top" height="300px"  src=" {{ post.image.url }}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}">
                                     {% endif %}
                                     <div class="image-flash">
                                         <p class="author">Author: {{ post.author }}</p>
@@ -55,8 +57,8 @@
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
                                 <hr />
-                                <p class="card-text text-muted h6">{{ post.published_on}} <i class="far fa-heart"></i>
-                                    {{ post.number_of_likes }}</p>
+                                <p class="card-text text-muted h6">{{ post.published_on}}   
+                                    <i class="far fa-heart"></i>  {{ post.number_of_likes }}</p>
                             </div>
                         </div>
                     </div>
@@ -75,8 +77,54 @@
             <a href="{% url 'all_recipes' %}"><button class="btn all-recipe-btn" >View all recipes</button></a>
          </div>
     </div>
-    <br>
-    <br>
+
+    <hr>
 </section>
+
+<section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Explore</h3>
+                <p>Looking for an inspiration? Find our most loved recipes below</p>
+            </div>
+            <!-- image -->
+            <div class="col-sm-7 col-md-6">
+                    <div class="col-6">
+                        <br>
+                    </div>
+                    <div class="explore-image">
+                                <img class="img-fit card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1679501764/ise9tnjaolgiqicfx9cj.jpg" alt="Healthy food" height="auto" width="600"> 
+                            </div>
+                    </div>
+                   
+                            
+
+            <!-- list of recipes -->
+            <div class="col-sm-5 col-md-4 mt-2">
+                <br>
+                <div class="col-6 offset-3">
+                </div>
+                <ol class="lead pl-4">
+                    {% for liked_recipe in liked_recipes %}
+                    <li>
+                        <a class="text-reset recipe-link" href="{% url 'recipe_details' liked_recipe.slug %}"
+                            >{{ liked_recipe.title}} </a>
+                        <hr />
+                    </li>
+                    {% endfor %}
+                </ol>
+                <br>
+                <p class="lead text-center">
+                    <a href="{% url 'all_recipes' %}" class="recipe-link text-reset">View all recipes</a>
+                </p>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
 {%endblock%}
 

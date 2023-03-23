@@ -71,6 +71,18 @@
                     {% endif %}
                    
                 </ul>
+                <form method="post" action="{% url 'search' %}" class="d-flex">
+                    {% csrf_token %}
+                    <input name="searched"
+                       class="form-control search-tab"
+                       type="text"
+                       placeholder="Search Recipes"
+                       aria-label="Search"
+                       />
+                    <button class="btn search-btn btn-warning border-right-0 border" type="submit">
+                    <i class="fa fa-search"></i>
+                    </button>
+                 </form>
             </div>
         </div>
     </nav>
@@ -83,12 +95,14 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg page-footer">
-        <p class="m-0 text-center text-white">Follow us: 
-            <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
-    </footer>
+    <footer class="page-footer mt-auto py-3">
+         
+         <p class="m-0 text-center mt-2 social-links">Join us:
+            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square mr-3" target="blank"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square mr-3" target="blank"></i></a>
+            <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube-square  mr-3" target="blank"></i></a>
+         </p>
+      </footer>
 </body>
 
 </html>
