@@ -12,7 +12,7 @@ body {
     background-color: #A43F2D !important;
     color: #fff !important;
     border: 2px groove;
-    padding: 0 5%;
+    padding: 1% 5%;
 }
 
 .nav-item a {
@@ -22,6 +22,7 @@ body {
 .nav-item a:hover {
     color:  #445261 !important;
 }
+
 
 #dropdown-items{
     color: #A43F2D !important;
@@ -256,7 +257,7 @@ body {
 }
 
 .foods{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Lobster', sans-serif;
     padding: 1% 0 0 0;
 }
 
