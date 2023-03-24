@@ -219,7 +219,7 @@ PEP8online.com site is not available at the moment. Its corrently down and thats
 
 ### Database Model Structure
 
-![database model structure](media/models.png)
+![database model structure](static/assets/images/database-schema.png)
 
 ## Tests
 
@@ -254,7 +254,7 @@ The site was run through Lighthouse in Chrome dev tools has been run.
 4. Choose Region - I am in Europe
 5. Click "Create App"
 
-**The page of project opens.**
+**The page of the project opens.**
 
 1. Go to Resources Tab, Add-ons, search and add Heroku Postgres
 
@@ -345,7 +345,8 @@ pip3 install -r requirements.txt
 #### The following sites has also been helpful:
 * [W3Schools](https://www.w3schools.com/) 
 * [P4 News](https://github.com/mamuzaan/Portfolio-P4-News) 
-* [The Healthy Family](https://github.com/Iris-Smok/The-Healthy-Family-PP4) 
+* [The Healthy Family](https://github.com/Iris-Smok/The-Healthy-Family-PP4)
+* [Viva la nacho](https://github.com/Matthew-Hurrell/viva-la-nacho) 
 * [Django project](https://docs.djangoproject.com/) 
 
 
