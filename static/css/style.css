@@ -223,23 +223,28 @@ body {
     padding: 50px;  
     background-color: rgb(73 69 65 / 55%);
     border-radius: 20px;   
-    margin: 10%;
+    margin: 2% 10% 2% 10%;  
 }
 
 #fodmap-steps{
-    padding: 50px;  
+  
     background-color: white;
     border-radius: 20px;   
-    margin: 0% 10% 0% 10%;
+    margin: 0 10% 2% 10%;
     color: white;
-    text-align: center;
+    text-align: center;s   
+}
+
+#fodmap-steps img{
+    height: auto;
+    width: 100%;
 }
 
 #low-fodmap{
     padding: 50px;  
     background-color: rgb(39, 164, 76);
     border-radius: 20px;   
-    margin: 0% 10% 0% 10%;
+    margin: 2% 10% 2% 10%;
     color: white;
 }
 
@@ -297,6 +302,7 @@ body {
     align-items: center;
     position: relative;
 }
+
 
 
 
