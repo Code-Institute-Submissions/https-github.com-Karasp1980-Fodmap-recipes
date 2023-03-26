@@ -82,40 +82,74 @@ Github issues were used to create the User stories and acceptance criteria. Link
 ------
 
 ### Navbar
-The navbar 
+For the navbar a red color is chosen with white text. An icon in the left corner is a decoration as well as a linke back to the homepage. When not logged in the navbar displays Home, Recipes, Register, Login. 
 
-![Navbar]()
+![Navbar logged in](static/assets/images/navbar-not-loggedin.png)
+
+When having logged in the navbar displays Favourite recipes, My recipes and Logout as well as a "Add recipe" button instead. The add recipe button is in yellow to stand out and be easy to find, and also to match the login/logout button in the welcome section.
+
+![Navbar not logged in](static/assets/images/navbar-login.png)
+
+At the right side in the navbar there is also a searchbar, for all users (logged in or not). The search bar is also in yellow to match the yellow buttons.
 
 ### Home Page
 
 The home page consists of a welcome hero image with a yellow clear login/register button (or when already logged in, a logout button). The hero image should be colorfol and inviting.
 
-![home page image]()
+![Welcome section](static/assets/images/fodmap-welcome.png)
 
-The next part of the home page is the recipe blog section, showing the latest 6 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments and likes and the date the post is published on.
+The next part of the home page is the recipe blog section, showing the latest 8 x2 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments and likes and the date the post is published on.
 
-![]()
+![Recently added recipes](static/assets/images/recently-added-recipes.png)
+
+
 
 ### Recipe details
 
-The recipe details page consists of the recipe uploaded by the user displaying the title/image uploaded (if not a placeholder image, which is the same image as the hero image on the home page), description, ingredients and preparation steps. 1
+The recipe details page consists of the recipe uploaded by the user displaying the title/image uploaded (if not a placeholder image, which is the same image as the hero image on the home page), description, ingredients and preparation steps. 
+
+![Recipe details](static/assets/images/recipe-details1.png)
+
+![Recipe details](static/assets/images/recipe-details2.png)
+
+Under the recipe secion there comes the like and comment section. When logged in the user can like and comment the recipe. To like a recipe you click the heart icon and it then changes color from transparent to red (or back to transparent if unlike).
+
+![Recipe details](static/assets/images/likes.png)
+
+To comment a recipe you fill out the comment form and click the submit button. A message then appears that the comment is avaiting approval. When the administrator has approved the comment it will be displayed in the comment section.
+
+![Recipe details](static/assets/images/comment2.png)
+
+![Recipe details](static/assets/images/comment-approval.png)
+
+If not logged in, the user can only see the comments and likes made by others.
+
+![Recipe details](static/assets/images/comment.png)
+
+
 
 ### About Fodmap
 The About Fodmap shoud be an informative site about the Fodmap diet. It consists of a presentation what Fodmaps are and why the diet could be beneficial when having IBS and sensitive stomach, with the same style as the welcome section on the home page. It then consists of an image illustrating the process when starting the Fodmap diet in order to first eat only low Fodmap diet and slowly try medium Fodmap grocerys in order to find out what grocerys that gives symptoms and in what portion sizes. After the image there comes two fileds with Low Fodmap and High Fodmap grocerys, the first in green to aware the user that this is the grocerys to choose, and the High Fodmap grocerys in red to implicit that these foods should be avoided. Information about the diet is mainly taken right from the Monash University, where the diet is "founded" and where scientific trials on different food has been performed.
 
+
 ### Register
 The user could register for an account by register a username, email (optional) and password
+
 
 ### Sign in
 When having registered an account the user could easily login byt entering username and password.
 
+![Sign in](static/assets/images/sign-in.png)
+
+
 ### Sign out
 The signout page has the same style as the sign in page.
 
-### Footer
-The footer  
+![Sign Out](static/assets/images/sign-out.png)
 
-![Navbar]()
+### Footer
+The footer is in the same red color as the navbar with white text. It displays social media links to Facebook, Instagram and Twitter.
+![Footer](static/assets/images/footer.png)
 
 ### Cloudinary API
 

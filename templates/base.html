@@ -42,23 +42,22 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'all_recipes' %}">Recipes</a>
                     </li>
-
                     <!--if user is authenticated-->    
                     {% if user.is_authenticated %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Welcome {{ user.username }}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a id="dropdown-items" class="dropdown-item" href="{% url 'favourite_recipes' %}">Favourite recipes</a>
-                            <a id="dropdown-items" class="dropdown-item" href="{% url 'my_recipes' %}">My recipes</a>
-                            <div class="dropdown-divider"></div>
-                            <a id="dropdown-items" class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'favourite_recipes' %}">Favourite Recipes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'my_recipes' %}">My Recipes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'account_logout' %}">Log out</a>
+                    </li>
+                    <br>
                     <li class="nav-item">
                         <a class="nav-link btn btn-warning btn-login-register" id="recipe-btn" href="{% url 'add_recipe' %}">Add Recipe   <i class="fas fa-edit ml-3"></i></a>
                     </li>
+
 
                     {% else %}
                     <li class="nav-item">

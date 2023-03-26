@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
-
+from django.contrib import messages
 
 
 class HomePage(generic.ListView):
@@ -17,7 +17,7 @@ class HomePage(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('-published_on')
     template_name = 'index.html'
-    paginate_by = 6
+    paginate_by = 8
 
 
 class AboutPage(generic.TemplateView):
@@ -89,7 +89,7 @@ class AllRecipes(generic.ListView):
     model = Post
     queryset = Post.objects.order_by('-published_on')
     template_name = 'all_recipes.html'
-    paginate_by = 6
+    paginate_by = 12
 
 class MyRecipes(View):
     """ view for users recipes page"""
@@ -99,7 +99,7 @@ class MyRecipes(View):
         if request.user.is_authenticated:
             post = Post.objects.filter(author=request.user)
 
-            paginator = Paginator(post, 6)  # 6 recipes per page showing
+            paginator = Paginator(post, 8)  # 8 recipes per page showing
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             return render(
@@ -114,7 +114,7 @@ class FavouriteRecipes(View):
         if request.user.is_authenticated:
             post = Post.objects.filter(likes=request.user.id)
 
-            paginator = Paginator(post, 6)  # Show 6 recipes per page
+            paginator = Paginator(post, 8)  # Show 8 recipes per page
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
             return render(
@@ -193,7 +193,7 @@ class SearchRecipe(View):
         """ post method"""
         searched = request.POST.get('searched')
         post = Post.objects.filter(title__icontains=searched)
-        paginator = Paginator(post, 6)  # Show 6 recipes per page
+        paginator = Paginator(post, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
         context = {

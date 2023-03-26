@@ -14,6 +14,9 @@ body {
     border: 2px groove;
     padding: 1% 5%;
 }
+.nav-item {
+   padding: 0 25px;
+}
 
 .nav-item a {
     color: white !important;
@@ -23,10 +26,6 @@ body {
     color:  #445261 !important;
 }
 
-
-#dropdown-items{
-    color: #A43F2D !important;
-}
 
 #recipe-btn {
     color:  #445261 !important;
@@ -279,12 +278,12 @@ body {
 
 .edit-buttons{
     margin: 0 1% 0 5%;
-    padding: 1% 5%;
+    padding: 1% 5% 1% 5%;
 }
 
 .delete-buttons{
     margin: 0 1%;
-    padding: 1% 5%;
+    padding: 1% 2%;
 }
 
 .all-recipe-btn{
