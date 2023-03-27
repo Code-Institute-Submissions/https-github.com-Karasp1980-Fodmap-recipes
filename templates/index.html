@@ -90,93 +90,40 @@
             </div>
             <!-- image -->
             <div class="col-sm-7 col-md-6">
-                    <div class="col-6">
-                        <br>
-                    </div>
-                    <div class="explore-image">
-                                <img class="img-fit card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1679501764/ise9tnjaolgiqicfx9cj.jpg" alt="Healthy food" height="auto" width="600"> 
-                            </div>
-                    </div>
-                   
-                            
-
-            <!-- list of recipes -->
-            <div class="col-sm-5 col-md-4 mt-2">
-                <br>
-                <div class="col-6 offset-3">
+                <div class="explore-image">
+                    <img class="img-fit card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1679501764/ise9tnjaolgiqicfx9cj.jpg" alt="Healthy food" height="auto" width="600"> 
                 </div>
-                <ol class="lead pl-4">
-                    {% for liked_recipe in liked_recipes %}
-                    <li>
-                        <a class="text-reset recipe-link" href="{% url 'recipe_details' liked_recipe.slug %}"
-                            >{{ liked_recipe.title}} </a>
-                        <hr />
-                    </li>
-                    {% endfor %}
-                </ol>
-                <br>
-                <p class="lead text-center">
-                    <a href="{% url 'all_recipes' %}" class="recipe-link text-reset">View all recipes</a>
-                </p>
             </div>
-        </div>
+                
         </div>
     </div>
 </section>
 
-<section class="wrapper container">
-    <h3 class="">Most Popular recipes</h3>
-    <div class="top">
-        <div class="hero">
-            <a href="/recipes/{{ most_popular.0.slug }}">
-                <div class="ribbon">
-                    <span class="ribbon__content text-center"
-                        >Most Popular</span
-                    >
-                </div>
-                <img
-                    src="{{ most_popular.0.featured_image.url }}"
-                    alt="{{ most_popular.0.title }}"
-                >
-                <div class="hero-info">
-                    <h3>{{ most_popular.0.title }}</h3>
-                </div>
-            </a>
+
+ 
+<div class="row">
+    {% for post in object_list|slice:":3" %}
+      {% if post.0 %}
+        <div class="col-sm-6 col-md-6">
+          <a href="{% url 'recipe_detail' post.slug %}">
+            <div class="card mb-6 shadow-sm">
+                <img class="img-fit card-img-top" src="{{ post.image.url }}" height="auto" width="100%">
+            </div>
+          </a>
         </div>
-        <div class="cta cta1">
-            <a href="">
-                <div class="ribbon">
-                    <span class="ribbon__content text-center"
-                        >Most Popular</span
-                    >
-                </div>
-                <img
-                    src="{{ most_popular.1.featured_image.url }}"
-                    alt="{{ most_popular.1.title }}"
-                >
-                <div class="hero-info">
-                    <h3>{{ most_popular.1.title }}</h3>
-                </div>
-            </a>
+      {% else %}
+        <div class="col-md-3">
+          <a href="{% url 'recipe_detail' post.slug %}">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" src="{{ post.image.url }}">
+            </div>
+          </a>
         </div>
-        <div class="cta cta2">
-            <a href="/recipes/{{ most_popular.2.slug }}">
-                <div class="ribbon">
-                    <span class="ribbon__content text-center"
-                        >Most Popular</span
-                    >
-                </div>
-                <img
-                    src="{{ most_popular.2.featured_image.url }}"
-                    alt="{{ most_popular.2.title }}"
-                >
-                <div class="hero-info">
-                    <h3>{{ most_popular.2.title }}</h3>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+
 
 {%endblock%}
 
