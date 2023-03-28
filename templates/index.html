@@ -108,6 +108,9 @@
           <a href="{% url 'recipe_detail' post.slug %}">
             <div class="card mb-6 shadow-sm">
                 <img class="img-fit card-img-top" src="{{ post.image.url }}" height="auto" width="100%">
+                <div class="image-flash">
+                    <p class="author">Author: {{ post.author }}</p>
+                </div>
             </div>
           </a>
         </div>

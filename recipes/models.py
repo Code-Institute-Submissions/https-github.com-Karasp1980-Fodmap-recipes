@@ -7,7 +7,7 @@ class Post(models.Model):
     """
     Post model
     """
-    title = models.CharField(max_length=200, blank=False, null=False)
+    title = models.CharField(max_length=200, blank=False, null=False, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,related_name='blog_posts')  
     published_on = models.DateTimeField(auto_now_add=True)
@@ -25,6 +25,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
 
 
 class Comment(models.Model):

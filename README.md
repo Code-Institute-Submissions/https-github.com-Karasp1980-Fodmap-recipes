@@ -98,11 +98,17 @@ The home page consists of a welcome hero image with a yellow clear login/registe
 
 ![Welcome section](static/assets/images/fodmap-welcome.png)
 
-The next part of the home page is the recipe blog section, showing the latest 8 x2 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments and likes and the date the post is published on.
+The next part of the home page is the recipe blog section, showing the latest 8 x2 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments and likes and the date the post is published on. When clicking on the post link the full recipe with details is displayed on the "recipe details" page.
 
 ![Recently added recipes](static/assets/images/recently-added-recipes.png)
 
+At the end of the "recently added recipes" section there is a "view all recipes" button that takes the user to the all_recipes/Recipes page with all recipes.
 
+### Add recipe
+
+When logged in the user can navigate to the "Add recipe" page by either clicking on the "Add recipe" button in the navbar or by clicking the "Add recipe" button at the top of "My recipes" page. The page incluedes a form with title, description, ingredients and preparation steps sections that the user can fill in. The user could also make som design desictions since the crispy forms is used. Finally the user could upload an image (if no image is choosen a placeholder image same as the welcome section image is displayed). When all fields are filled out the "Add recipe" button is clicked to save the recipe and be redirected to the recipes page (recipe_details). The recipe should now be found in the "recently added recipes" section on the homepage, the reciped page as well as in the users "My recipes" page (where it can be edited or deleted). If the user does not want to add the recipe the "back" button could be clicked to come back to the homepage.
+
+![Add recipe](static/assets/images/add-recipe.png)
 
 ### Recipe details
 
@@ -131,6 +137,33 @@ If not logged in, the user can only see the comments and likes made by others.
 ### About Fodmap
 The About Fodmap shoud be an informative site about the Fodmap diet. It consists of a presentation what Fodmaps are and why the diet could be beneficial when having IBS and sensitive stomach, with the same style as the welcome section on the home page. It then consists of an image illustrating the process when starting the Fodmap diet in order to first eat only low Fodmap diet and slowly try medium Fodmap grocerys in order to find out what grocerys that gives symptoms and in what portion sizes. After the image there comes two fileds with Low Fodmap and High Fodmap grocerys, the first in green to aware the user that this is the grocerys to choose, and the High Fodmap grocerys in red to implicit that these foods should be avoided. Information about the diet is mainly taken right from the Monash University, where the diet is "founded" and where scientific trials on different food has been performed.
 
+### Recipes
+The Recipes/"all recipes"  site displays all recipes added to the site, 4x3 posts per page.
+
+![All recipes](static/assets/images/all-recipes.png)
+
+
+### Favourite recipes
+When logged in the user can see all recepies that they have liked on the "Favourite recipes" site to make it easy to save recipe and find.
+
+![Favourite recipes](static/assets/images/favourite-recipes.png)
+
+### My recipes with CRUD 
+When logged in, the user can navigate to the "My recipes" page where all their own posted recipes are found. 4x2 recipes are displayed at each page. 
+
+![My recipe](static/assets/images/my-recipes.png)
+
+Underneath each recipe the user can edit or delete the recipe.
+
+![Edit/delete](static/assets/images/edit-delete.png)
+
+When clicking on the edit button the user come to the recipe form page and can edit all the details and save the changes by clicking the green "edit" button. If the user does not want to change anything they can click the "back" button.
+
+![Edit recipe](static/assets/images/edit-recipe.png)
+
+When clicking on the delete button the user come to the "delete recipe" site wher they are asked "Are you sure you want to delete this recipe?" and if so the user can click the red delete button. If the user does not want to change anything they can click the "back" button.
+
+![Delete recipe](static/assets/images/delete-recipe.png)
 
 ### Register
 The user could register for an account by register a username, email (optional) and password
@@ -150,7 +183,6 @@ The signout page has the same style as the sign in page.
 ### Footer
 The footer is in the same red color as the navbar with white text. It displays social media links to Facebook, Instagram and Twitter.
 ![Footer](static/assets/images/footer.png)
-
 ### Cloudinary API
 
 For images the cloud based API Cloudinary is used. When a user uploads an image, it is saved in Cloudinary.

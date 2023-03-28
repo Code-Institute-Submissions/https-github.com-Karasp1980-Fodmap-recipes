@@ -13,8 +13,8 @@
 <!-- TITLE -->
 <div class="container">
     <div class="row">
-        <div class="col-12 text-center mt-5">
-            <h2 class="recipe-title">Add Recipe</h2>
+        <div class="col-12 mt-5">
+            <h2 class="recipe-title text-center">Add Recipe</h2>
             <hr>
         </div>
     </div>
@@ -24,11 +24,13 @@
 <!-- RECIPE FORM -->
 <div class="container">
     <div class="row">
-        <div class="col-10 mt-3 offset-1 g-0">
+        <div class="col-10 mt-3 offset-1 g-0 text-center">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ recipe_form|crispy}}
-                <button class="btn btn-secondary right mb-2" type="submit" value="Save">Add Recipe</button>
+                <br>
+                <a href="/" class="btn btn-primary left mb-2" style="margin-right:20px;"><i class="fas fa-arrow-left ml-3"></i> Back</a>
+                <button class="btn btn-success right mb-2" type="submit" >Add recipe <i class="fas fa-edit ml-3"></i></button>
             </form>
         </div>
     </div>
