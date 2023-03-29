@@ -144,7 +144,7 @@ class AddRecipe(View):
             return redirect('recipe_detail', recipe.slug)
         else:
             messages.error(self.request, 'Please complete all required fields')
-           
+            
 
         return render(
             request,

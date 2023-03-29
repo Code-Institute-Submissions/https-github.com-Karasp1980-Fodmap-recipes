@@ -24,7 +24,7 @@
 <!-- RECIPE FORM -->
 <div class="container">
     <div class="row">
-        <div class="col-10 mt-3 offset-1 g-0 text-center">
+        <div class="col-10 mt-3 offset-1 g-0">
             <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ recipe_form|crispy}}
