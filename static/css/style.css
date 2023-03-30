@@ -282,7 +282,7 @@ body {
 }
 
 .delete-buttons{
-    margin: 0 1%;
+    margin: 0 0 1% 0;
     padding: 1% 2%;
 }
 
@@ -302,5 +302,30 @@ body {
     position: relative;
 }
 
+@media only screen and (max-width: 1280px){
+
+    .edit-buttons{
+        margin: 2% 1% 2% 20%;
+        padding: 1% 5%;
+    }
+    
+    .delete-buttons{
+        margin: 2% 1%;
+        padding: 1% 2%;
+    }
+    }
 
 
+@media only screen and (max-width: 768px){
+
+    .edit-buttons{
+        margin: 1% 1%;
+        padding: 1% 2%;
+    }
+    
+    .delete-buttons{
+        margin: 1% 1%;
+        padding: 1% 2%;
+    }
+    }
+    
