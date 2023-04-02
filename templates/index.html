@@ -53,7 +53,7 @@
                                         <p class="author">Author: {{ post.author }}</p>
                                     </div>
                                 </div>
-                                <a href="{% url 'recipe_detail' post.slug  %}" class="post-link">
+                                <a href="{% url 'recipe_details' post.slug  %}" class="post-link">
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
@@ -106,7 +106,7 @@
     {% for post in object_list|slice:":3" %}
       {% if post.0 %}
         <div class="col-sm-6 col-md-6">
-          <a href="{% url 'recipe_detail' post.slug %}">
+          <a href="{% url 'recipe_details' post.slug %}">
             <div class="card mb-6 shadow-sm">
                 <img class="img-fit card-img-top" src="{{ post.image.url }}" height="auto" width="100%">
                 <div class="image-flash">
@@ -117,7 +117,7 @@
         </div>
       {% else %}
         <div class="col-md-3">
-          <a href="{% url 'recipe_detail' post.slug %}">
+          <a href="{% url 'recipe_details' post.slug %}">
             <div class="card mb-4 shadow-sm">
               <img class="card-img-top" src="{{ post.image.url }}">
             </div>

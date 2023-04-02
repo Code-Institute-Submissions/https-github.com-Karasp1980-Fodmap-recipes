@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Oswald&display=swap');
 
+
 body {
     background-color: white;
     font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
 }
+
+a {text-decoration: none}
 
 .dark-bg {
     background-color: #A43F2D;
@@ -82,6 +85,12 @@ body {
     margin: 4px;
     
 }
+
+.recipe-card-head {
+    /*background-color: rgb(164 63 45 / 30%);*/
+    /*background-color: #445261;*/
+}
+
 
 .masthead {
     margin-top: 10px;
@@ -315,6 +324,10 @@ body {
 
 @media only screen and (max-width: 1280px){
 
+    .nav-item {
+        padding: 5px;
+     }
+
     .register-text {
         margin-right: 15%;
       }
@@ -322,11 +335,13 @@ body {
     .edit-buttons{
         margin: 2% 1% 2% 20%;
         padding: 1% 5%;
+        text-decoration: none;
     }
     
     .delete-buttons{
         margin: 2% 1%;
         padding: 1% 2%;
+        text-decoration: none;
     }
     }
 
@@ -334,7 +349,7 @@ body {
 @media only screen and (max-width: 768px){
 
 
-    .register-text
+    .register-text{
         margin-right: 5%;
       }
 

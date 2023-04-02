@@ -6,7 +6,7 @@ from django.urls import path
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
     path('about/', views.AboutPage.as_view(), name='about'),
-    path('<slug:slug>/', views.RecipeDetails.as_view(), name='recipe_detail'),
+    path('<slug:slug>/', views.RecipeDetails.as_view(), name='recipe_details'),
     path('my_recipes', views.MyRecipes.as_view(), name='my_recipes'),
     path('favourite_recipes', views.FavouriteRecipes.as_view(), name='favourite_recipes'),
     path('all_recipes', views.AllRecipes.as_view(), name='all_recipes'),
@@ -16,4 +16,6 @@ urlpatterns = [
     path('<slug:slug>/', views.RecipeDetails.as_view(), name='recipe_details'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('search', views.SearchRecipe.as_view(), name='search'),
+    path('edit_comment/<int:pk>', views.EditComment.as_view(), name='edit_comment'),
+    path('delete_comment/<int:pk>', views.DeleteComment.as_view(), name='delete_comment'),   
 ]

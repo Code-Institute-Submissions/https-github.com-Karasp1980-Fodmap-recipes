@@ -1,9 +1,8 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic, View
 from .models import Post, Comment
 from .forms import CommentForm, RecipeForm
 from django.utils.text import slugify
-from django.shortcuts import redirect
 from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
@@ -201,3 +200,21 @@ class SearchRecipe(View):
             'searched': searched
         }
         return render(request, 'search.html', context)
+
+
+
+
+class EditComment(UpdateView):
+    """ Edits Comment """
+    model = Comment
+    template_name = 'edit_comment.html'
+    form_class = CommentForm
+    success_url = "/"
+   
+
+
+class DeleteComment(DeleteView):
+    """ Deletes Comment """
+    model = Comment
+    template_name = 'delete_comment.html'
+    success_url = "/"

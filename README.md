@@ -28,10 +28,7 @@
     - [Performing tests on various devices](#performing-tests-on-various-devices)
     - [Browser compatibility](#browser-compatibility)
   - [Bugs](#bugs)
-  - [Configuration](#configuration)
-    - [Google emails](#google-emails)
-    - [Forking the GitHub Repository](#forking-the-github-repository)
-    - [Making a Local Clone](#making-a-local-clone)
+  - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
 
@@ -366,24 +363,23 @@ The website was tested using Google Chrome Developer Tools Toggle Device Toolbar
 ##### Back to [top](#table-of-contents)
 
 
-## Configuration
+## Deployment
 
+This project was deployed using Github and Heroku.
 
+## Github 
+To create a new repository I took the following steps:
 
-### Forking the GitHub Repository
-1. Go to the GitHub repository
-2. Click on Fork button in top right corner
-3. You will then have a copy of the repository in your own GitHub account.
-   
-### Making a Local Clone
-1. Go to the GitHub repository 
-2. Locate the Code button above the list of files and click it
-3. Highlight the "HTTPS" button to clone with HTTPS and copy the link
-4. Open commandline interface on your computer
-5. Change the current working directory to the one where you want the cloned directory
-6. Type git clone and paste the URL from the clipboard 
+- Logged into Github.
+- Clicked over to the ‘repositories’ section.
+- Clicked the green ‘new’ button. This takes you to the create new repository page.
+- Once there under ‘repository template’ I chose the code institute template from the dropdown menu.
+- I input a repository name then clicked the green ‘create repository button’ at the bottom of the page.
+- Once created I opened the new repository and clicked the green ‘Gitpod’ button to create a workspace in Gitpod for editing.
 
-7. Press Enter to create your local clone
+## Django and Heroku 
+- To get the Django framework installed and set up I followed the Code institutes [Django Blog cheatsheet](https://codeinstitute.s3.amazonaws.com/fst/Django%20Blog%20Cheat%20Sheet%20v1.pdf)
+
 
 ##### Back to [top](#table-of-contents)
 

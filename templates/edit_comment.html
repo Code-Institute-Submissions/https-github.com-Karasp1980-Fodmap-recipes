@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% if user.is_authenticated and user.username == comment.name %}
+<!-- title -->
+<div class="container">
+   <div class="row">
+      <div class="col-8 offset-2 text-center mt-5">
+         <h2 class="recipe-title">Edit comment</h2>
+         <hr>
+      </div>
+   </div>
+   <!-- edit comment form -->
+   <div class="row">
+      <div class="col-8 mt-3 offset-2 text-center">
+         <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <a href="/" class="btn btn-primary left mb-2" style="margin-right:20px;"><i class="fas fa-arrow-left ml-3"></i> Back</a>
+            <button class="btn btn-success right mb-2" type="submit" >Edit Comment  <i class="fas fa-edit ml-3"></i></button>
+         </form>
+      </div>
+   </div>
+</div>
+{% endif %}
+{%endblock%}

@@ -6,13 +6,12 @@
     <div class="container">
         <div class="row g-0">
             <div class="col-md-6 masthead-text">
-                <!-- Post title goes in these h1 tags -->
-                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post title -->
+                <h1 class="post-title recipe-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">
-                
+            <div class="d-none d-md-block col-md-6 masthead-image">           
                 {% if "placeholder" in post.image.url %}
                 <img src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" width="100%">
                 {% else %}
@@ -22,6 +21,7 @@
         </div>
     </div>
 </div>
+
 
 
 <div class="container">
@@ -98,7 +98,12 @@
                     <!-- The body of the comment goes before the | -->
                     {{ comment.body | linebreaks }}
                 </div>
-                <!-- Our for loop ends here -->
+                {% if user.is_authenticated and user.username == comment.name %}
+                <a href="{% url 'edit_comment' comment.id %}" class="btn-sm btn-success  ">Edit</a>
+                <a href="{% url 'delete_comment' comment.id %}" class="btn-sm btn-danger ">Delete</a> 
+                
+                
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

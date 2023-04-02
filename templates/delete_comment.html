@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+{% load cloudinary %}
+{% if user.is_authenticated %}
+<!-- title -->
+<div class="container">
+   <div class="row">
+      <div class="col-8 offset-2 text-center mt-5">
+         <h2 class="recipe-title">Delete </h2>
+         <hr>
+      </div>
+   </div>
+   <!-- delete form -->
+   <div class="row">
+      <div class="col mt-3 text-center">
+         <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <p>Are you sure you want to delete this recipe?</p>
+            <br>
+            <a href="/" class="btn btn-primary left mb-2" style="margin-right:20px;"><i class="fas fa-arrow-left ml-3"></i> Back</a>
+            <button class="btn btn-danger right mb-2" type="submit" >Delete  <i class="fas fa-edit ml-3"></i></button>
+         </form>
+      </div>
+   </div>
+   
+</div>
+{% endif %}
+{%endblock%}
