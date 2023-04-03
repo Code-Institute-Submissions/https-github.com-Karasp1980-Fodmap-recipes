@@ -1,4 +1,4 @@
-#Fodmap recipes <img src="https://raw.githubusercontent.com/aleksandracodes/activelifestyle/main/img/dumbell.png" style="width: 40px;height:40px;">
+#Fodmap recipes <img src="" style="width: 40px;height:40px;">
 
 
 💻 [Visit live website](https://fodmap-recipes.herokuapp.com)
@@ -214,9 +214,17 @@ Under the recipe secion there comes the like and comment section. When logged in
 
 To comment a recipe you fill out the comment form and click the submit button. A message then appears that the comment is avaiting approval. When the administrator has approved the comment it will be displayed in the comment section.
 
-![Recipe details](static/assets/images/comment2.png)
-
 ![Recipe details](static/assets/images/comment-approval.png)
+
+
+The user can edit/delete their own comments (when logged in). 
+
+![Edit/delete comments](static/assets/images/commentCRUD.png)
+
+![Edit comment](static/assets/images/edit-comment.png)
+
+![Delete comment](static/assets/images/delete-comment.png)
+
 
 If not logged in, the user can only see the comments and likes made by others.
 
@@ -230,6 +238,8 @@ The About Fodmap shoud be an informative site about the Fodmap diet. It consists
 The Recipes/"all recipes"  site displays all recipes added to the site, 4x3 posts per page.
 
 ![All recipes](static/assets/images/all-recipes.png)
+
+### Recipe details
 
 ### Favourite recipes
 When logged in the user can see all recepies that they have liked on the "Favourite recipes" site to make it easy to save recipe and find.
@@ -336,7 +346,7 @@ The testing approach is as follows:
 
 ### Manual testing of user stories
 
-
+![Manual testing of user stories](static/assets/images/userstories-test.png)
 
 
 
