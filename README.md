@@ -208,7 +208,7 @@ The recipe details page consists of the recipe uploaded by the user displaying t
 
 ![Recipe details](static/assets/images/recipe-details2.png)
 
-Under the recipe secion there comes the like and comment section. When logged in the user can like and comment the recipe. To like a recipe you click the heart icon and it then changes color from transparent to red (or back to transparent if unlike).
+Under the recipe secion there comes the like and comment section. When logged in the user can like and comment the recipe. To like a recipe you click the heart icon and it then changes color from transparent to red (or back to transparent if unlike). The user can also see the number of comments made on that recipe.
 
 ![Recipe details](static/assets/images/likes.png)
 
@@ -346,8 +346,104 @@ The testing approach is as follows:
 
 ### Manual testing of user stories
 
-![Manual testing of user stories](static/assets/images/userstories-test.png)
+The user stories are found here: [User stories](https://github.com/users/Karasp1980/projects/7)
+an here [User stories Issues](https://github.com/Karasp1980/Fodmap-recipes/issues)
 
+
+![Manual testing of user stories](static/assets/images/userstories.png)
+
+
+**Superuser / Admin**
+- As a site Admin I can create, edit and delete recipes and comments so that I can manage the site content
+- As a site Admin I can access the admin panel so that I can manage recipes and comments
+- As a site Admin I can log out of the admin panel so that I can disconnect from the website
+
+This was tested by accessing the Django Admin Panel. By creating a Superuser we can access the Django Admin Panel where the administrator can perform all the CRUD functionalitis
+
+**User Interaction**
+1. As a logged-in User I can write comments on recipes so that I can leave my feedback
+
+<p align="center">
+<img src="static/assets/images/comment2.png" width="300" height="auto">
+</p>
+
+2. As a logged-in User I can like and unlike recipes so that I can mark which recipes I like
+<p align="center">
+<img src="static/assets/images/number-of-likes.png" width="300" height="auto">
+</p>
+
+3. As a User I can view the number of likes on recipes so that I can see which recipes are the most popular
+<p align="center">
+<img src="static/assets/images/number-of-comments.png" width="300" height="auto">
+</p>
+
+4. As a User I can view comments on recipes so that I can read other users opinions
+<p align="center">
+<img src="static/assets/images/comment.png" width="300" height="auto">
+</p>
+
+**User Recipes**
+1. As a logged-in User I can post a recipes so that other users can see them
+<p align="center">
+<img src="static/assets/images/add-recipe-button.png" width="300" height="auto">
+<img src="static/assets/images/add-recipe.png" width="300" height="auto">
+</p>
+2. As a User I can delete my recipes so that I can remove any unwanted recipes that I have made
+<p align="center">
+<img src="static/assets/images/delete-recipe-button.png" width="300" height="auto">
+</p>
+3. As a User I can edit recipes so that I can update any changes or mistakes to my recipes
+<p align="center">
+<img src="static/assets/images/edit-recipe-button.png" width="300" height="auto">
+</p>
+4. As a logged-in User I can upload an image along with my recipe so that other users can see what the dish looks like
+<p align="center">
+<img src="static/assets/images/upload-image.png" width="300" height="auto">
+</p>
+
+
+**Login/Register**
+1. As a User I can register for an account so that I can interact with the site content
+<p align="center">
+<img src="static/assets/images/register-nav.png" width="300" height="auto">
+</p>
+
+2. As a User I can log in/out off my account if I wish so that I can connect or disconnect from the website
+<p align="center">
+<img src="static/assets/images/login-nav.png" width="300" height="auto">
+</p>
+
+<p align="center">
+<img src="static/assets/images/logout-nav.png" width="300" height="auto">
+</p>
+
+3. As a User I can easily see if I'm logged-in or logged-out so that I can be sure what my status is
+<p align="center">
+<img src="static/assets/images/login-message.png" width="500" height="auto">
+</p>
+<p align="center">
+<img src="static/assets/images/logout-message.png" width="500" height="100%">
+</p>
+
+**Navigation**
+1. As a User I can easily navigate through the site so that I can view desired content
+<p align="center">
+<img src="static/assets/images/fodmap-welcome.png" width="500" height="auto">
+</p>
+
+2. As a User I can search the desirable recipe by keyword so that I can find the recipe I want faster
+<p align="center">
+<img src="static/assets/images/search.png" width="500" height="auto">
+</p>
+3. As a User I can see the most loved recipes so that I can quickly find inspiration and see which recipes are most famous
+<p align="center">
+
+</p>
+
+4. As a User I can see the recently recipes so that I can keep up to date with the latest recipes
+<p align="center">
+<img src="static/assets/images/recently-added-recipes.png" width="500" height="auto">
+</p>
 
 
 ### Automated testing
