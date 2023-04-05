@@ -18,6 +18,18 @@ a {text-decoration: none}
     background-color: white;
 }
 
+.recipe-title{
+    font-size: 50px;
+    font-family: 'Lobster', sans-serif;
+}
+
+.latest-recipes{
+    font-size: 25px;
+    font-family: 'Lobster', sans-serif;
+    margin: 3% 0 0 1%;
+}
+
+
 /* navbar */
 .navbar {
     background-color: #A43F2D !important;
@@ -278,16 +290,10 @@ a {text-decoration: none}
     padding: 1% 0 0 0;
 }
 
-.recipe-title{
-    font-size: 50px;
-    font-family: 'Lobster', sans-serif;
-}
 
-.latest-recipes{
-    font-size: 25px;
-    font-family: 'Lobster', sans-serif;
-    margin: 3% 0 0 1%;
-}
+
+
+/* buttons */
 
 .edit-buttons{
     margin: 0 1% 0 5%;
@@ -305,16 +311,10 @@ a {text-decoration: none}
     color: white;
 }
 
-.userlog-image{
-    background: no-repeat center center fixed;
-    background-size: cover;
-    height: 83vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
 
+
+
+/* register */
 .register-text {
     text-align: right;
     margin-right: 20%;

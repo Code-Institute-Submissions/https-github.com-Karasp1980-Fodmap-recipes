@@ -7,6 +7,8 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.db.models import Count
+
 
 
 class HomePage(generic.ListView):
@@ -17,6 +19,14 @@ class HomePage(generic.ListView):
     queryset = Post.objects.order_by('-published_on')
     template_name = 'index.html'
     paginate_by = 8
+
+   
+    def get_context_data(self, **kwargs):
+       
+        context = super().get_context_data(**kwargs)
+       
+        context['liked_recipes'] = Post.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')
+        return context
 
 
 class AboutPage(generic.TemplateView):
@@ -218,3 +228,4 @@ class DeleteComment(DeleteView):
     model = Comment
     template_name = 'delete_comment.html'
     success_url = "/"
+

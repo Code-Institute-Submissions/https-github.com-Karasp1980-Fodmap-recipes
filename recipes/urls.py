@@ -6,7 +6,6 @@ from django.urls import path
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
     path('about/', views.AboutPage.as_view(), name='about'),
-    path('<slug:slug>/', views.RecipeDetails.as_view(), name='recipe_details'),
     path('my_recipes', views.MyRecipes.as_view(), name='my_recipes'),
     path('favourite_recipes', views.FavouriteRecipes.as_view(), name='favourite_recipes'),
     path('all_recipes', views.AllRecipes.as_view(), name='all_recipes'),
