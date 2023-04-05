@@ -26,12 +26,14 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                <a href="{% url 'recipe_details' post.slug  %}" class="post-link">
                                 {% if "placeholder" in post.image.url %}
                                 <img class="card-img-top"
                                     src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg">
                                 {% else %}
                                 <img class="card-img-top" src=" {{ post.image.url }}">
                                 {% endif %}
+                                </a>
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
