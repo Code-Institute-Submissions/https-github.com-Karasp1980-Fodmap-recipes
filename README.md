@@ -517,3 +517,4 @@ The following sites has also been helpful:
 * [Viva la nacho](https://github.com/Matthew-Hurrell/viva-la-nacho) 
 * [Django project](https://docs.djangoproject.com/) 
 * [Workout planner](https://github.com/aleksandracodes/CI_PP4_Workout_Planner)
+* [Django documentation](https://docs.djangoproject.com/en/4.1/topics/class-based-views/generic-display/#adding-extra-context)

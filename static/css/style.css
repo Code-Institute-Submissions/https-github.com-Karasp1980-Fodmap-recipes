@@ -311,7 +311,15 @@ a {text-decoration: none}
     color: white;
 }
 
-
+.userlog-image{
+    background: no-repeat center center fixed;
+    background-size: cover;
+    height: 83vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
 
 /* register */
