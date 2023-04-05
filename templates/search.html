@@ -23,7 +23,7 @@
                            {% if "placeholder" in post.image.url %}
                            <img src="https://res.cloudinary.com/irissmok/image/upload/v1653860346/static/images/oranges_s600aw.webp" alt="Oranges" class="card-img-top img-fit" height="300">
                            {% else %}
-                           <img class="card-img-top img-fit" height="300px" src=" {{ post.image.url }}" alt="{{ post.title}}">
+                           <img class="card-img-top" src=" {{ post.image.url }}" alt="{{ post.title}}">
                            {% endif %}
                         </div>
                         <h3 class="card-title">{{ post.title }}</h3>
@@ -46,7 +46,7 @@
                <div class="row justify-content-md-center">
                   <div class="col-md-8 offset-2 mt-4">
                      <h2 class="display-5">Sorry</h2>
-                     <p class="lead">There are no recipes with '{{ searched }}' in the title.</p>
+                     <p class="lead">There are no recipes with '{{ searched }}' in the title or in the ingredients.</p>
                      <p class="lead"> Browse through all recipes <a href="{% url 'all_recipes' %}">here</a>. Or try searching again.</p>
                   </div>
                </div>

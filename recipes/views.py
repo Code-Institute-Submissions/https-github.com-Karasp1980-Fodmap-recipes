@@ -202,6 +202,8 @@ class SearchRecipe(View):
         """ post method"""
         searched = request.POST.get('searched')
         post = Post.objects.filter(title__icontains=searched)
+        post_with_ingredient = Post.objects.filter(ingredients__icontains=searched)
+        post = post | post_with_ingredient # Combines the two query results
         paginator = Paginator(post, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
