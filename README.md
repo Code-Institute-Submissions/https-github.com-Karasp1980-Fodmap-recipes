@@ -431,7 +431,7 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 <img src="static/assets/images/fodmap-welcome.png" width="500" height="auto">
 </p>
 
-2. As a User I can search the desirable recipe by keyword so that I can find the recipe I want faster
+2. As a User I can search the desirable recipe by keyword (in the recipe title or in the ingredients) so that I can find the recipe I want faster
 <p align="center">
 <img src="static/assets/images/search.png" width="500" height="auto">
 </p>

@@ -42,7 +42,7 @@ class RecipeDetails(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.all()
-        post = get_object_or_404(queryset, slug=slug)
+        post = get_object_or_404(queryset, slug=slug)        
         comments = Comment.objects.filter(post__id=post.id).order_by('published_on')
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
