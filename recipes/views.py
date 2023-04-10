@@ -150,7 +150,7 @@ class AddRecipe(View):
                                   allow_unicode=False)
             recipe.save()
         
-            return redirect('recipe_detail', recipe.slug)
+            return redirect('recipe_details', recipe.slug)
         else:
             messages.error(self.request, 'Please complete all required fields')
             
@@ -223,11 +223,11 @@ class EditComment(UpdateView):
     form_class = CommentForm
     success_url = "/"
    
-    
 
-class DeleteComment(DeleteView):
-    """ Deletes Comment """
-    model = Comment
-    template_name = 'delete_comment.html'
-    success_url = "/"
-
+def delete_comment(request, id):
+    comment = get_object_or_404(Comment, id=id)
+    post = get_object_or_404(Post, id=comment.post.id)
+    if request.method == 'POST':
+        comment.delete()
+        return redirect('recipe_details', post.slug)
+    return render(request, 'delete_comment.html', {'comment': comment, 'post': post})

@@ -39,8 +39,10 @@
                                 <p class="card-text">{{ post.excerpt }}</p>
                             </a>
                             <hr />
-                            <p class="card-text text-muted h6">{{ post.published_on}}   
-                                <i class="far fa-heart"></i>  {{ post.number_of_likes }}</p>
+                            <p class="card-text text-muted h6">{{ post.published_on}}<span style="padding-left: 5px;"></span>   
+                                <i class="far fa-heart"></i>  {{ post.number_of_likes }} 
+                                <i class="far fa-comments" style="margin-left: 10px;"></i>  {{ post.comments.count }}
+                            </p>
                         </div>
                     </div>
                 </div>
