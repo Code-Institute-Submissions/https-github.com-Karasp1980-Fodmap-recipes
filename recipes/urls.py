@@ -1,7 +1,9 @@
 
 from . import views
 from django.urls import path
-from .views import delete_comment
+from .views import delete_comment, edit_comment
+
+
 
 urlpatterns = [
     path('', views.HomePage.as_view(), name='home'),
@@ -15,7 +17,6 @@ urlpatterns = [
     path('<slug:slug>/', views.RecipeDetails.as_view(), name='recipe_details'),
     path('like/<slug:slug>', views.PostLike.as_view(), name='post_like'),
     path('search', views.SearchRecipe.as_view(), name='search'),
-    path('edit_comment/<int:pk>', views.EditComment.as_view(), name='edit_comment'),  
-    path('delete_comment/<int:id>/', views.delete_comment, name='delete_comment'),  
-    #path('delete_comment/<int:id>/redirect/', views.delete_comment_redirect, name='delete_comment_redirect'), 
+    path('delete_comment/<int:id>/', views.delete_comment, name='delete_comment'), 
+    path('edit_comment/<int:pk>', views.edit_comment, name='edit_comment'), 
 ]

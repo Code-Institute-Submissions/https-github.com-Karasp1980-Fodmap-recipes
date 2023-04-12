@@ -88,14 +88,10 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 
 ### Colours
 
-The colour scheme was chosen to provide simple, neutral and fresh look. It was an intention to keep the website for all range of users and avoid colour stereotype typically found in the gyms and sports centres such as bright green or blue.
+The colour scheme was chosen to provide simple, neutral and fresh look.
 
 These colours were used throughout all the pages in such a way as to ensure adequate contrast and good user experience.
 
-The pallet created using [Coolors.co](https://coolors.co/)
-<details><summary>See colour pallet</summary>
-<img src="docs/readme/color-pallet-PP4.png">
-</details>
 
 ### Fonts
 
@@ -193,6 +189,10 @@ The next part of the home page is the recipe blog section, showing the latest 8 
 ![Recently added recipes](static/assets/images/recently-added-recipes.png)
 
 At the end of the "recently added recipes" section there is a "view all recipes" button that takes the user to the all_recipes/Recipes page with all recipes.
+
+At the end of the home page a section with the 3 "Most liked recipes" is added, starting whit the most liked recipe at the left side. This is a section to give the user inspiration for which recipes to try and a sight which recipes that has been most popular.
+
+![Most liked recipes](static/assets/images/most-liked-recipes.png)
 
 ### Add recipe
 

@@ -8,7 +8,7 @@ from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.db.models import Count
-
+from django.urls import reverse_lazy
 
 
 class HomePage(generic.ListView):
@@ -216,13 +216,19 @@ class SearchRecipe(View):
 
 
 
-class EditComment(UpdateView):
-    """ Edits Comment """
-    model = Comment
-    template_name = 'edit_comment.html'
-    form_class = CommentForm
-    success_url = "/"
-   
+def edit_comment(request, pk):
+    comment = get_object_or_404(Comment, pk=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return redirect('recipe_details', slug=comment.post.slug)
+    else:
+        form = CommentForm(instance=comment)
+        context = {'form': form, 'comment': comment}
+    return render(request, 'edit_comment.html', context)
+
+ 
 
 def delete_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
