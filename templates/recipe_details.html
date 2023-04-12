@@ -72,7 +72,23 @@
                         {% with comments.count as total_comments %}
                         <strong class="text-secondary"><i class="far fa-comments"></i>
                             <!-- total comments -->
-                            {{ total_comments }}</strong>
+                            {% if post.comments.count is not None %}
+                              {{ post.comments.count }}
+                            {% else %}
+                              <!-- Make an API call to fetch the updated number of comments -->
+                              <script>
+                                fetch('/api/posts/comments/{{ post.id }}')
+                                  .then(function(response) {
+                                  return response.json();
+                                })
+                                .then(function(data) {
+                                  document.querySelector('#comments-count-{{ post.id }}').innerHTML = data.count;
+                                });
+                              </script>
+                              <span id="comments-count-{{ post.id }}
+                          </span>
+                            {% endif %}
+                          </strong>
                         {% endwith %}
                     </div>
                 </div>
@@ -149,6 +165,16 @@
     {% endif %}
 </div>
 
-
+<script>
+    let message = new URLSearchParams(window.location.search).get('message');
+    if (message) {
+      let messages = document.getElementById('msg');
+      let alert = new bootstrap.Alert(messages);
+      alert.show();
+      setTimeout(function () {
+          alert.close();
+      }, 4000);
+    }
+  </script>
 
 {% endblock content %}
