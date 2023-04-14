@@ -28,6 +28,7 @@
     - [Performing tests on various devices](#performing-tests-on-various-devices)
     - [Browser compatibility](#browser-compatibility)
   - [Bugs](#bugs)
+  - [Improvements](#improvements)
   - [Deployment](#deployment)
   - [Credits](#credits)
   - [Acknowledgements](#acknowledgements)
@@ -208,7 +209,7 @@ The recipe details page consists of the recipe uploaded by the user displaying t
 
 ![Recipe details](static/assets/images/recipe-details2.png)
 
-Under the recipe secion there comes the like and comment section. When logged in the user can like and comment the recipe. To like a recipe you click the heart icon and it then changes color from transparent to red (or back to transparent if unlike). The user can also see the number of comments made on that recipe.
+Under the recipe secion there comes the like and comment section. When logged in the user can like and comment the recipe. To like a recipe you click the heart icon and it then changes color from transparent to red (or back to transparent if unlike). The user can also see the number of comments (when approved and deployed) made on that recipe.
 
 ![Recipe details](static/assets/images/likes.png)
 
@@ -464,7 +465,14 @@ The website was tested using Google Chrome Developer Tools Toggle Device Toolbar
 
 ## Bugs
 
-|
+## Improvements
+
+Possible future improvements of the site could be:
+
+* The number of comments count to be updated first after the comment has been approved
+* Adding a field in the top of the recipe_details page with cooking time and number of portions
+* A user info site where the user can update/edit their userinfo 
+
 
 ##### Back to [top](#table-of-contents)
 
@@ -518,3 +526,4 @@ The following sites has also been helpful:
 * [Django project](https://docs.djangoproject.com/) 
 * [Workout planner](https://github.com/aleksandracodes/CI_PP4_Workout_Planner)
 * [Django documentation](https://docs.djangoproject.com/en/4.1/topics/class-based-views/generic-display/#adding-extra-context)
+* [Django messages](https://docs.djangoproject.com/en/4.2/ref/contrib/messages/) 
