@@ -103,7 +103,9 @@
                 <!-- edit/delete comment if logged in as the comment creator -->
                 {% if user.is_authenticated and user.username == comment.name %}
                 <a href="{% url 'edit_comment' comment.id %}" class="btn-sm btn-success">Edit</a>
-                <a href="{% url 'delete_comment' comment.id %}" class="btn-sm btn-danger">Delete</a>          
+                <a href="{% url 'delete_comment' comment.id %}" class="btn-sm btn-danger">Delete</a>
+                
+               
                 
                 {% endif %}
                 <hr>

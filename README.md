@@ -35,13 +35,13 @@
 
 ### About
 
-Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy to find recipes that are Fodmap friendly. This site should be both inspiering and informative and make it easy to find tasty Fodmap recipes.  The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at the recipes uploaded and the About Fodmap site is open to all users.b  The site provides healthy recipes beneficial to all users and ages, and weather you follow the Fodmap diet or not.
+Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy to find recipes that are Fodmap friendly. This site should be both inspiering and informative and make it easy to find tasty Fodmap recipes.  The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at all the recipes uploaded and the About Fodmap site and search function is open to all users. The site provides healthy recipes beneficial to all users in different ages, and weather you follow the Fodmap diet or not.
 
 ### User Goals
 
 - Be able to find and search healthy Fodmap recipes
-- Be able to add, comment and like recipes
-- Be able to manage own posted recipes (edit/delete)
+- Be able to add, comment and like recipes 
+- Be able to manage own posted recipes and comments (edit/delete)
 
 ### Site Owner Goals
 
@@ -54,7 +54,7 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 
 ### Target Audience
 - People with IBS trying to find Fodmap friendly recipes
-- People in all ages with or without IBS problems that wants to find healthy recipes
+- People in all ages with or without IBS problems that want to find healthy recipes
 
 
 ### User Requirements and Expectations
@@ -62,7 +62,7 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 - Straightforward navigation
 - Easy to use
 - A responsive application that allows the user to access the app on any device
-- Visually appealing design for all screen size
+- Visually appealing design for all screen sizes
 - Links and functions that work as expected
 - An easy way to interact and comment other peoples recipes and give tips in the comments
 - Accessibility
@@ -72,14 +72,7 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 
 ## User Stories
 
-### Users
-
-1.
-
-
-
-### Site Owner
-11.	
+![User stories](static/assets/images/userstories.png)
 
 
 ##### Back to [top](#table-of-contents)
@@ -92,7 +85,7 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 The colour scheme was chosen to provide simple, neutral and fresh look.
 
 These colours were used throughout all the pages in such a way as to ensure adequate contrast and good user experience.
-
+The red color #A43F2D seen in the header and footer for instance was chosen to be colorful but yet not taking over the content, and also match well with the plain white background and text. The grey #445261 also matches well with the other colors.
 
 ### Fonts
 
@@ -102,7 +95,7 @@ Google Fonts were implemented on the website. Lobster and Oswald with sans-serif
 
 #### Website pages
 
-
+Homepage, About Fodmap, Recipes, Add recipe, Recipe details, Favourite recipes, My recipes, search
 
 
 #### Database
@@ -116,7 +109,7 @@ Google Fonts were implemented on the website. Lobster and Oswald with sans-serif
 
 ### Wireframes
 
-All wireframes were created used [Balsamiq](https://balsamiq.com/)
+All wireframes were created using [Balsamiq](https://balsamiq.com/)
 
 Wireframes for each device are linked here:
 - [Desktop](documents/desktop-wireframes)
@@ -298,7 +291,9 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 
 
 ### CSS Validation
-The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website. When validating all website, it passes with no errors.
+The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website and it passes with no errors.
+
+![Jigwaw validation](static/assets/images/jigsaw.png)
 
 
 ### JavaScript Validation
@@ -351,7 +346,7 @@ The user stories are found here: [User stories](https://github.com/users/Karasp1
 an here [User stories Issues](https://github.com/Karasp1980/Fodmap-recipes/issues)
 
 
-![Manual testing of user stories](static/assets/images/userstories.png)
+![User stories](static/assets/images/userstories.png)
 
 
 **Superuser / Admin**
@@ -381,6 +376,28 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 4. As a User I can view comments on recipes so that I can read other users opinions
 <p align="center">
 <img src="static/assets/images/comment.png" width="300" height="auto">
+</p>
+
+5. As a User I can see that my easily see a message after adding a recipe as well as edit or delete a recipe or comment so I can see it has been successfull
+<p align="center">
+<img src="static/assets/images/add-recipe-message.png" width="500" height="auto">
+</p>
+<p align="center">
+<img src="static/assets/images/edit-recipe-message.png" width="500" height="100%">
+</p>
+<p align="center">
+<img src="static/assets/images/delete-recipe-message.png" width="500" height="100%">
+</p>
+<p align="center">
+<img src="static/assets/images/edit-comment-message.png" width="500" height="100%">
+</p>
+<p align="center">
+<img src="static/assets/images/delete-comment-message.png" width="500" height="100%">
+</p>
+
+6. As a User I can get an error message when trying to add a recipe and not having filled in all the fields (or  using a title that already exists) so that I easily can see that a field is missing and correct that or change the title
+<p align="center">
+<img src="static/assets/images/add-recipe-form-message.png" width="500" height="auto">
 </p>
 
 **User Recipes**
@@ -425,6 +442,8 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 <p align="center">
 <img src="static/assets/images/logout-message.png" width="500" height="100%">
 </p>
+
+
 
 **Navigation**
 1. As a User I can easily navigate through the site so that I can view desired content

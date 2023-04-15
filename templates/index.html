@@ -47,7 +47,7 @@
                                     <a href="{% url 'recipe_details' post.slug  %}" class="post-link">
                                     {% if "placeholder" in post.image.url %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg">
+                                        src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
                                     {% else %}
                                     <img class="card-img-top" src=" {{ post.image.url }}">
                                     {% endif %}
@@ -104,7 +104,7 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in liked_recipe.image.url %}
-                                    <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg">
+                                    <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
                                     {% else %}
                                     <a href="{% url 'recipe_details' recipe.slug  %}" class="post-link">
                                         <img class="card-img-top" src=" {{ recipe.image.url }}">

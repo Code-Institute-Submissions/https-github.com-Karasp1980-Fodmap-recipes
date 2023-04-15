@@ -128,10 +128,10 @@ class FavouriteRecipes(View):
     def get(self, request):
         """favourite_recipes view, get method"""
         if request.user.is_authenticated:
-            post = list(Post.objects.filter(likes=request.user.id))
             paginator = Paginator(post, 8)  # Show 8 recipes per page
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
+            post = list(Post.objects.filter(likes=request.user.id))
             for post in post:
                 post.comment_count = post.comments.filter(approved=True).count()
             return render(
@@ -224,14 +224,14 @@ class SearchRecipe(View):
         paginator = Paginator(post, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number) 
-          
+        
+        post = list(Post.objects.filter(likes=request.user.id))
+        for post in post:
+            post.comment_count = post.comments.filter(approved=True).count()
         context = {
             'page_obj': page_obj,
-            'searched': searched
+            'searched': searched,
         }
-        post = list(post)
-        for post in post:
-            post.comment_count = post.comments.filter(approved=True).count() 
         return render(request, 'search.html', context)
 
 

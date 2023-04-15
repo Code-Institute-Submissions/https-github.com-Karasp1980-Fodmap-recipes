@@ -49,7 +49,9 @@ a {text-decoration: none}
     color:  #445261 !important;
 }
 
-
+#recipe-btn {
+    color:  #445261 !important;
+}
 
 /* footer */
 
@@ -70,9 +72,6 @@ a {text-decoration: none}
         padding: 0 3% 0 3%;
 }
 
-#recipe-btn {
-    color:  #445261 !important;
-}
 
 /* posts */ 
 .card {
@@ -98,10 +97,6 @@ a {text-decoration: none}
     
 }
 
-.recipe-card-head {
-    /*background-color: rgb(164 63 45 / 30%);*/
-    /*background-color: #445261;*/
-}
 
 
 .masthead {
@@ -170,6 +165,7 @@ a {text-decoration: none}
     background-color: #fff;
     color: #A43F2D;
 }
+
 
 .link {
     color: #A43F2D;
@@ -256,7 +252,7 @@ a {text-decoration: none}
     border-radius: 20px;   
     margin: 0 10% 2% 10%;
     color: white;
-    text-align: center;s   
+    text-align: center;  
 }
 
 #fodmap-steps img{
@@ -310,6 +306,8 @@ a {text-decoration: none}
     font-family: 'Oswald', sans-serif;
     color: white;
 }
+
+
 
 .userlog-image{
     background: no-repeat center center fixed;
