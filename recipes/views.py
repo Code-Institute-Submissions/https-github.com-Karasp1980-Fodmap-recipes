@@ -232,13 +232,13 @@ class SearchRecipe(View):
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
 
-        post = list(Post.objects.filter(likes=request.user.id))
-        for post in post:
-            post.comment_count = post.comments.filter(approved=True).count()
         context = {
             'page_obj': page_obj,
             'searched': searched,
         }
+        post = list(Post.objects.filter(likes=request.user.id))
+        for post in post:
+            post.comment_count = post.comments.filter(approved=True).count()
         return render(request, 'search.html', context)
 
 

@@ -82,7 +82,7 @@ Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy t
 
 ### Colours
 
-The colour scheme was chosen to provide simple, neutral and fresh look.
+The colour scheme was chosen to provide a simple, neutral and fresh look.
 
 These colours were used throughout all the pages in such a way as to ensure adequate contrast and good user experience.
 The red color #A43F2D seen in the header and footer for instance was chosen to be colorful but yet not taking over the content, and also match well with the plain white background and text. The grey #445261 also matches well with the other colors.

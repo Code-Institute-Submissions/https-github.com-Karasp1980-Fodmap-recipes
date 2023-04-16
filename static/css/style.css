@@ -276,7 +276,7 @@ a {text-decoration: none}
     color: white;
 }
 
-#foodmap-foods{
+.foodmap-foods{
     font-family: 'Lobster', sans-serif;
     padding: 0;
 }
