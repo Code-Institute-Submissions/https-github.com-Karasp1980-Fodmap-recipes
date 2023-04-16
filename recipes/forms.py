@@ -4,8 +4,6 @@ from django_summernote.widgets import SummernoteWidget
 from .models import Comment, Post
 
 
-
-
 class RecipeForm(forms.ModelForm):
     """ Recipe Form """
     class Meta:
@@ -20,13 +18,12 @@ class RecipeForm(forms.ModelForm):
             'preparation_steps': SummernoteWidget(),
         }
 
-  
     def __init__(self, *args, **kwargs):
         super(RecipeForm, self).__init__(*args, **kwargs)
         self.fields[
             'image'
             ].label = "Upload an image here"
-     
+
 
 class CommentForm(forms.ModelForm):
     """ Comment Form"""

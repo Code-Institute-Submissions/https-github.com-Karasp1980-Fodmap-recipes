@@ -288,8 +288,6 @@ The W3C Markup Validation Service was used to validate the HTML of the website.
 
 
 
-
-
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website and it passes with no errors.
 
@@ -301,8 +299,33 @@ JSHint JS Validation Service was used to validate the Javascript files. No error
 
 
 
-### PEP8 Validation
+### PEP8 Validation/CI Python Linter
 PEP8 Validation Service was used to check the code for PEP8 requirements. All the code passes with no errors and no warnings to show.
+
+#### admin.py
+
+![admin.py validation](static/assets/images/admin.py-validation.png)
+
+
+#### settings.py
+
+![settings.py validation](static/assets/images/settings.py-validation.png)
+
+#### forms.py
+
+![forms.py validation](static/assets/images/forms.py-validation.png)
+
+#### models.py
+
+![models.py validation](static/assets/images/models.py-validation.png)
+
+#### urls.py
+
+![urls.py validation](static/assets/images/urls.py-validation.png)
+
+#### views.py
+
+![views.py validation](static/assets/images/views.py-validation.png)
 
 
 

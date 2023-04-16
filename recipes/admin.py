@@ -2,16 +2,16 @@ from django.contrib import admin
 from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     """
     Post class in admin panel
     """
-    list_display = ('title','slug', 'published_on')
+    list_display = ('title', 'slug', 'published_on')
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('title', 'published_on')
     summernote_fields = ('description', 'ingredients', 'preparation_steps')
-   
 
 
 @admin.register(Comment)

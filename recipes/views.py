@@ -18,11 +18,12 @@ class HomePage(generic.ListView):
     queryset = Post.objects.order_by('-published_on')
     template_name = 'index.html'
     paginate_by = 8
-    
-   
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['liked_recipes'] = Post.objects.annotate(num_likes=Count('likes')).order_by('-num_likes')
+        context['liked_recipes'] = Post.objects.annotate(
+         num_likes=Count('likes')
+        ).order_by('-num_likes')
         for post in context['object_list']:
             post.comment_count = post.comments.filter(approved=True).count()
         return context
@@ -35,16 +36,16 @@ class AboutPage(generic.TemplateView):
     template_name = 'about.html'
 
 
-    
 class RecipeDetails(View):
     """ Recipe details page """
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Post.objects.all()
-        post = get_object_or_404(queryset, slug=slug)        
-        comments = Comment.objects.filter(post__id=post.id).order_by('published_on')
-        post.comment_count = post.comments.filter(approved=True).count() # count only the comments that are approved
-        post.save()
+        post = get_object_or_404(queryset, slug=slug)
+        comments = Comment.objects.filter(
+         post__id=post.id
+        ).order_by('published_on')
+        post.comment_count = post.comments.filter(approved=True).count()
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -60,12 +61,14 @@ class RecipeDetails(View):
                 "comment_form": CommentForm()
             }
         )
-        
+
     def post(self, request, slug, *args, **kwargs):
 
         queryset = Post.objects.all()
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-published_on")
+        comments = post.comments.filter(
+         approved=True
+        ).order_by("-published_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -92,6 +95,7 @@ class RecipeDetails(View):
             },
         )
 
+
 class AllRecipes(generic.ListView):
     """
     all_recipes view
@@ -107,6 +111,7 @@ class AllRecipes(generic.ListView):
             post.comment_count = post.comments.filter(approved=True).count()
         return context
 
+
 class MyRecipes(View):
     """ view for users recipes page"""
 
@@ -114,7 +119,6 @@ class MyRecipes(View):
         """your_recipes view, get method"""
         if request.user.is_authenticated:
             post = Post.objects.filter(author=request.user)
-
             paginator = Paginator(post, 8)  # 8 recipes per page showing
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
@@ -123,22 +127,25 @@ class MyRecipes(View):
         else:
             return render(request, 'my_recipes.html')
 
+
 class FavouriteRecipes(View):
     """ favourite recipes view"""
     def get(self, request):
         """favourite_recipes view, get method"""
         if request.user.is_authenticated:
+            post = list(Post.objects.filter(likes=request.user.id))
             paginator = Paginator(post, 8)  # Show 8 recipes per page
             page_number = request.GET.get('page')
             page_obj = paginator.get_page(page_number)
-            post = list(Post.objects.filter(likes=request.user.id))
             for post in post:
-                post.comment_count = post.comments.filter(approved=True).count()
+                post.comment_count = post.comments.filter(
+                 approved=True
+                ).count()
             return render(
                 request, 'favourite_recipes.html', {"page_obj": page_obj, })
         else:
             return render(request, 'favourite_recipes.html')
-            
+
 
 class AddRecipe(View):
     """ add recipe"""
@@ -162,16 +169,14 @@ class AddRecipe(View):
             return redirect('recipe_details', recipe.slug)
         else:
             messages.error(self.request, 'Please complete all required fields')
-            
 
         return render(
             request,
             "add_recipe.html",
             {
                 "recipe_form": recipe_form
+            },)
 
-            },
-        )  
 
 class EditRecipe(UpdateView):
     """ Edit Recipe """
@@ -184,6 +189,7 @@ class EditRecipe(UpdateView):
         messages.success(self.request, "Recipe edited successfully")
         return super().form_valid(form)
 
+
 class DeleteRecipe(DeleteView):
     """ Delete Recipe """
     model = Post
@@ -192,12 +198,11 @@ class DeleteRecipe(DeleteView):
 
     def delete(self, request, *args, **kwargs):
         messages.success(request, "Recipe deleted successfully")
-        return super().delete(request, *args, **kwargs)   
-
+        return super().delete(request, *args, **kwargs)
 
 
 class PostLike(View):
-    
+
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
@@ -219,12 +224,14 @@ class SearchRecipe(View):
         """ post method"""
         searched = request.POST.get('searched')
         post = Post.objects.filter(title__icontains=searched)
-        post_with_ingredient = Post.objects.filter(ingredients__icontains=searched)
-        post = post | post_with_ingredient # Combines the two query results
+        post_with_ingredient = Post.objects.filter(
+         ingredients__icontains=searched
+        )
+        post = post | post_with_ingredient  # Combines the two query results
         paginator = Paginator(post, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
-        page_obj = paginator.get_page(page_number) 
-        
+        page_obj = paginator.get_page(page_number)
+
         post = list(Post.objects.filter(likes=request.user.id))
         for post in post:
             post.comment_count = post.comments.filter(approved=True).count()
@@ -233,8 +240,6 @@ class SearchRecipe(View):
             'searched': searched,
         }
         return render(request, 'search.html', context)
-
-
 
 
 def edit_comment(request, pk):
@@ -250,10 +255,6 @@ def edit_comment(request, pk):
         context = {'form': form, 'comment': comment}
     return render(request, 'edit_comment.html', context)
 
- 
-
-
-
 
 def delete_comment(request, id):
     comment = get_object_or_404(Comment, id=id)
@@ -262,4 +263,8 @@ def delete_comment(request, id):
         comment.delete()
         messages.success(request, "Comment deleted successfully")
         return redirect(reverse('recipe_details', args=[post.slug]))
-    return render(request, 'delete_comment.html', {'comment': comment, 'post': post})
+    return render(
+     request,
+     'delete_comment.html',
+     {'comment': comment, 'post': post}
+    )
