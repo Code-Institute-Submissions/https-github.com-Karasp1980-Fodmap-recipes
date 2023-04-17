@@ -223,10 +223,12 @@ class SearchRecipe(View):
     def post(self, request):
         """ post method"""
         searched = request.POST.get('searched')
-        post = Post.objects.filter(title__icontains=searched)
+        post = Post.objects.filter(title__icontains=searched).all()
+        for post in post:
+            post.comment_count = post.comments.filter(approved=True).count()
         post_with_ingredient = Post.objects.filter(
          ingredients__icontains=searched
-        )
+        ).all()
         post = post | post_with_ingredient  # Combines the two query results
         paginator = Paginator(post, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
@@ -235,10 +237,9 @@ class SearchRecipe(View):
         context = {
             'page_obj': page_obj,
             'searched': searched,
-        }
-        post = list(Post.objects.filter(likes=request.user.id))
-        for post in post:
-            post.comment_count = post.comments.filter(approved=True).count()
+            'post': post,
+            }
+
         return render(request, 'search.html', context)
 
 
