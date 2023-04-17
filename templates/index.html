@@ -57,7 +57,7 @@
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
-                                <hr />
+                                <hr>
                                 <p class="card-text text-muted h6">{{ post.published_on}}<span style="padding-left: 5px;"></span>   
                                     <i class="far fa-heart"></i>  {{ post.number_of_likes }} 
                                     <i class="far fa-comments" style="margin-left: 10px;"></i> {{ post.comment_count }}
@@ -77,8 +77,8 @@
       
 
         <div class="col-12 text-center mt-2">
-            <!--<a href="{% url 'all_recipes' %}"><div><button class="btn all-recipe-btn" >View all recipes</button></div></a>-->
-         </div>
+            <a href="{% url 'all_recipes' %}"><div><button class="btn all-recipe-btn" >View all recipes</button></div></a>
+        </div>
     </div>
 
     <hr>
