@@ -46,7 +46,7 @@
                                     <img class="card-img-top"
                                         src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.image.url }}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Image of {{ post.title }}">
                                     {% endif %}
                                     </a>
                                     <div class="image-flash">
@@ -77,7 +77,7 @@
       
 
         <div class="col-12 text-center mt-2">
-            <a href="{% url 'all_recipes' %}"><div><button class="btn all-recipe-btn" >View all recipes</button></div></a>
+            <!--<a href="{% url 'all_recipes' %}"><div><button class="btn all-recipe-btn" >View all recipes</button></div></a>-->
          </div>
     </div>
 
@@ -104,7 +104,7 @@
                                     <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
                                     {% else %}
                                     <a href="{% url 'recipe_details' recipe.slug  %}" class="post-link">
-                                        <img class="card-img-top" src=" {{ recipe.image.url }}">
+                                        <img class="card-img-top" src=" {{ recipe.image.url }}" alt="Image of {{ post.title }}">
                                     </a>
                                     {% endif %}
                                     <div class="image-flash">
