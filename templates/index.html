@@ -4,7 +4,7 @@
 
 <section>
     <!-- Welcome section -->
-    <div class="container-fluid hero-image" style="background-image:url('https://res.cloudinary.com/dglcwfgzw/image/upload/v1681206627/fodma-recipes-background_ghwuue.jpg') ;">
+    <div class="container-fluid hero-image" style="background-image:url('https://res.cloudinary.com/dglcwfgzw/image/upload/v1681917523/fodmap-recipes-backgroundWebP_syvibf.webp') ;">
         <div class="row">
             <div class="col col-title text-center">
                     <h1 class="text-center title"> Welcome to Fodmap recipes</h1>
@@ -44,9 +44,9 @@
                                     <a href="{% url 'recipe_details' post.slug  %}" class="post-link">
                                     {% if "placeholder" in post.image.url %}
                                     <img class="card-img-top"
-                                        src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
+                                        src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681917523/fodmap-recipes-backgroundWebP_syvibf.webp" alt="placeholder">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Image of {{ post.title }}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Image of {{ post.title }}" height="auto" width="300px">
                                     {% endif %}
                                     </a>
                                     <div class="image-flash">
@@ -100,10 +100,10 @@
                             <div class="card-body">
                                 <div class="image-container">
                                     {% if "placeholder" in liked_recipe.image.url %}
-                                    <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1678303325/vegetables-790022_960_720_jizvfv.jpg" alt="placeholder">
+                                    <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681917523/fodmap-recipes-backgroundWebP_syvibf.webp" alt="placeholder">
                                     {% else %}
                                     <a href="{% url 'recipe_details' recipe.slug  %}" class="post-link">
-                                        <img class="card-img-top" src=" {{ recipe.image.url }}" alt="Image of {{ post.title }}">
+                                        <img class="card-img-top" src=" {{ recipe.image.url }}" alt="Image of {{ post.title }}" height="auto" width="300px">
                                     </a>
                                     {% endif %}
                                     <div class="image-flash">

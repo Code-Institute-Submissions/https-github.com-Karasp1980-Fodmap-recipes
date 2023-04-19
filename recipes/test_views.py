@@ -17,7 +17,6 @@ class TestUser(TestCase):
             )
         self.client.login(username="testuser", password="654321")
 
-
 class TestGetPages(TestCase):
     """ test to ensure that all the pages display"""
     def test_get_home_page(self):
@@ -80,6 +79,7 @@ class TestGetPages(TestCase):
             response = self.client.get(f'/recipe_details/{self.post.id}')
             self.assertEqual(response.status_code, 200)
             self.assertTemplateUsed(response, 'recipe_details.html')
+    
 
     def test_edit_recipe_page(self):
         """
@@ -130,7 +130,6 @@ class TestGetPages(TestCase):
         response = self.client.get('/search')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'search.html')
-
 
 
 

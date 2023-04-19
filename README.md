@@ -284,19 +284,14 @@ For images the cloud based API Cloudinary is used. When a user uploads an image,
 
 ## Validation
 
-The W3C Markup Validation Service was used to validate the HTML of the website.
+The W3C Markup Validation Service was used to validate the HTML of the website. No errors were found.
 
-
+![W3 validator](static/assets/images/W3-validator.png)
 
 ### CSS Validation
 The W3C Jigsaw CSS Validation Service was used to validate the CSS of the website and it passes with no errors.
 
 ![Jigwaw validation](static/assets/images/jigsaw.png)
-
-
-### JavaScript Validation
-JSHint JS Validation Service was used to validate the Javascript files. No errors were found.
-
 
 
 ### PEP8 Validation/CI Python Linter
