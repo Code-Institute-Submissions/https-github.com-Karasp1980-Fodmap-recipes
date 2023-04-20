@@ -167,16 +167,18 @@ a {text-decoration: none}
 }
 
 
-.link {
-    color: #A43F2D;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
+.signup-link {
+    color: white;
     text-decoration: underline;
 }
+
+.signup-link:hover,
+.signup-link:active {
+    color: #A43F2D;
+    
+}
+
+/* like */
 
 .btn-like {
     color: #E84610;
@@ -306,7 +308,6 @@ a {text-decoration: none}
     font-family: 'Oswald', sans-serif;
     color: white;
 }
-
 
 
 .userlog-image{

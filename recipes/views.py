@@ -7,7 +7,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.core.paginator import Paginator
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.db.models import Count
+from django.db.models import Count, Q
 
 
 class HomePage(generic.ListView):
@@ -222,22 +222,30 @@ class SearchRecipe(View):
 
     def post(self, request):
         """ post method"""
-        searched = request.POST.get('searched')
-        post = Post.objects.filter(title__icontains=searched).all()
-        for post in post:
-            post.comment_count = post.comments.filter(approved=True).count()
-        post_with_ingredient = Post.objects.filter(
-         ingredients__icontains=searched
-        ).all()
-        post = post | post_with_ingredient  # Combines the two query results
-        paginator = Paginator(post, 8)  # Show 8 recipes per page
+        searched = request.POST.get('searched')       
+        post_with_title = Post.objects.filter(title__icontains=searched)
+        post_with_ingredient = Post.objects.filter(ingredients__icontains=searched)
+        posts = post_with_title | post_with_ingredient  # Combines the two query results        
+        
+        for post in posts:
+            if post:
+                post.comment_count = post.comments.filter(approved=True).count()
+            else:
+                post.comment_count = 0
+            print(post.comment_count)
+        
+        
+        paginator = Paginator(posts, 8)  # Show 8 recipes per page
         page_number = request.GET.get('page')
         page_obj = paginator.get_page(page_number)
+
+
 
         context = {
             'page_obj': page_obj,
             'searched': searched,
-            'post': post,
+            'post': posts,
+            
             }
 
         return render(request, 'search.html', context)

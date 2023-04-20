@@ -12,15 +12,17 @@
     <div class="col col-title text-center">
       <h2 class="title">{% trans "Register" %}</h2>
       <br>
-      <p class="display-6">{% blocktrans %}Already have an account? Then please <a class="link text-white" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+      <p class="display-6 text-white">{% blocktrans %}Already have an account? Then please <a class="signup-link" href="{{ login_url }}">login </a>.{% endblocktrans %}</p>
       <br>
-      <form class="signup register-text text-white" id="signup_form" method="post" action="{% url 'account_signup' %}">
+      <form class="signup text-white" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
+        <div class="register-text">
         {{ form.as_p }}
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-warning  text-center register-button" type="submit">{% trans "Register" %} &raquo;</button>
+        </div>
+        <button class="btn btn-warning" type="submit">{% trans "Register" %} &raquo;</button>
       </form>
     </div>
   </div>
