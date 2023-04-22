@@ -4,25 +4,21 @@
 
 
 
-<div class="masthead">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-6 masthead-text">
-                <!-- Post title -->
-                <h1 class="post-title recipe-title">{{ post.title }}</h1>
-                <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-            </div>
-            <div class="d-none d-md-block col-md-6 masthead-image">           
-                {% if "placeholder" in post.image.url %}
-                <img src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681206627/fodma-recipes-background_ghwuue.jpg" width="100%">
-                {% else %}
-                <img src=" {{ post.image.url }}" width="100%">
-                {% endif %}
-            </div>
-        </div>
+<div class="container">
+    <div class="row no-gutters recipe-card-head text-white mt-2">
+       <div class="col-md-6 my-auto">
+          <h1 class="recipe-title"> {{ post.title }}</h1>
+          <p class="recipe-subtitle mb-3 mb-lg-0">by {{ post.author }} | <em>{{ post.published_on }}</em></p>
+       </div>
+       <div class="d-md-block col-lg-6">
+          {% if "placeholder" in post.image.url %}
+          <img src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681206627/fodma-recipes-background_ghwuue.jpg" alt="fodmap" class="card-img-top img-fit">
+          {% else %}
+          <img class="card-img-top img-fit" src=" {{ post.image.url }}" alt="{{ post.title}}">
+          {% endif %}
+       </div>
     </div>
-</div>
+ </div>
 
 
 <!-- Recipe details: Description, Ingredients, Preparation steps -->

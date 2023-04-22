@@ -46,7 +46,7 @@
                                     <img class="card-img-top"
                                         src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681917523/fodmap-recipes-backgroundWebP_syvibf.webp" alt="placeholder">
                                     {% else %}
-                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Image of {{ post.title }}">
+                                    <img class="card-img-top" src=" {{ post.image.url }}" alt="Image of {{ post.title }}" height="200" width="300">
                                     {% endif %}
                                     </a>
                                     <div class="image-flash">
@@ -103,7 +103,7 @@
                                     <img class="card-img-top" src="https://res.cloudinary.com/dglcwfgzw/image/upload/v1681917523/fodmap-recipes-backgroundWebP_syvibf.webp" alt="placeholder">
                                     {% else %}
                                     <a href="{% url 'recipe_details' recipe.slug  %}" class="post-link">
-                                        <img class="card-img-top" src=" {{ recipe.image.url }}" alt="Image of {{ post.title }}">
+                                        <img class="card-img-top" src=" {{ recipe.image.url }}" alt="Image of {{ post.title }}" height="300" width="300">
                                     </a>
                                     {% endif %}
                                     <div class="image-flash">

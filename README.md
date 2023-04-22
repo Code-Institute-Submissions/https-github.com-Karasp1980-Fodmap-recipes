@@ -178,7 +178,7 @@ The home page consists of a welcome hero image with a yellow clear login/registe
 
 ![Welcome section](static/assets/images/fodmap-welcome.png)
 
-The next part of the home page is the recipe blog section, showing the latest 8 x2 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments and likes and the date the post is published on. When clicking on the post link the full recipe with details is displayed on the "recipe details" page.
+The next part of the home page is the recipe blog section, showing the latest 8 x2 blog posts entered (the last post in the upper left corner). The blog post showing consists of an image (if no image is not uploaded by the post creator a placeholder image is displayed) as well as the number of comments (only approved/published comments are counted) and likes and the date the post is published on. When clicking on the post link the full recipe with details is displayed on the "recipe details" page.
 
 ![Recently added recipes](static/assets/images/recently-added-recipes.png)
 
@@ -490,6 +490,20 @@ Automated testing was done using the Django's unit tests from a Python standard 
 
 
 
+#### test_views.py
+![Unittest Views](static/assets/images/unittest-test_views.png)
+
+
+
+#### test_forms.py
+![Unittest Forms](static/assets/images/unittest-test_forms.png)
+
+
+
+#### Unittest coverage
+![Unittest Forms](static/assets/images/unittest-coverage-report.png)
+
+
 
 ### Performing tests on various devices
 
@@ -502,6 +516,8 @@ The website was tested using Google Chrome Developer Tools Toggle Device Toolbar
 
 ## Bugs
 
+![Bugs](static/assets/images/bugs.png)
+
 ## Improvements
 
 Possible future improvements of the site could be:
@@ -509,6 +525,7 @@ Possible future improvements of the site could be:
 * The number of comments count to be updated first after the comment has been approved
 * Adding a field in the top of the recipe_details page with cooking time and number of portions
 * A user info site where the user can update/edit their userinfo 
+* Get the unittest coverage up to 100%
 
 
 ##### Back to [top](#table-of-contents)
@@ -557,7 +574,6 @@ The facts about Fodmap were taken from:
 #### Ohter
 The following sites has also been helpful:
 * [W3Schools](https://www.w3schools.com/) 
-* [P4 News](https://github.com/mamuzaan/Portfolio-P4-News) 
 * [The Healthy Family](https://github.com/Iris-Smok/The-Healthy-Family-PP4)
 * [Viva la nacho](https://github.com/Matthew-Hurrell/viva-la-nacho) 
 * [Django project](https://docs.djangoproject.com/) 
