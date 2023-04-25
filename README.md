@@ -522,9 +522,8 @@ The website was tested using Google Chrome Developer Tools Toggle Device Toolbar
 
 Possible future improvements of the site could be:
 
-* The number of comments count to be updated first after the comment has been approved
 * Adding a field in the top of the recipe_details page with cooking time and number of portions
-* A user info site where the user can update/edit their userinfo 
+* A user info site where the user can update/edit/delet their userinfo details
 * Get the unittest coverage up to 100%
 
 

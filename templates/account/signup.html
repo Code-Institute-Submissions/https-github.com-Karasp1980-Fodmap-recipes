@@ -16,12 +16,25 @@
       <br>
       <form class="signup text-white" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
-        <div class="register-text">
-        {{ form.as_p }}
+        <div>
+          <div class="username-and-email">
+            <div>
+                {{ form.username.errors }}
+                <label for="{{ form.username.id_for_label }}">Username:</label>
+                {{ form.username }}
+            </div>
+            <div>
+                {{ form.email.errors }}
+                <label for="{{ form.email.id_for_label }}">Email:</label>
+                {{ form.email }}
+            </div>
+        </div>
+        
         {% if redirect_field_value %}
         <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
         {% endif %}
         </div>
+      </br>
         <button class="btn btn-warning" type="submit">{% trans "Register" %} &raquo;</button>
       </form>
     </div>
