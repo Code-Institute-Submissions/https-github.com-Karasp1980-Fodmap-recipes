@@ -304,6 +304,8 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 
 #### settings.py
 
+Only these four lines who were to long were left since it felt to risky to break them.
+
 ![settings.py validation](static/assets/images/settings.py-validation.png)
 
 #### forms.py
@@ -331,10 +333,12 @@ PEP8 Validation Service was used to check the code for PEP8 requirements. All th
 ### Chrome Dev Tools Lighthouse
 
 Lighthouse was used to test the performance, accessibility, best practice and SEO of the site.
-Overall the results are very good for the 4 values.
+Overall the results are very good for the 4 values even if the results shifted alot. But the image size for instance was optimized using [Tiny PNG](https://tinypng.com) 
 
 #### Desktop
 <details><summary>View results</summary>
+
+![Lighthouse](static/assets/images/lighthouse.png)
 
 
 
@@ -388,15 +392,20 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 
 3. As a User I can view the number of likes on recipes so that I can see which recipes are the most popular
 <p align="center">
-<img src="static/assets/images/number-of-comments.png" width="300" height="auto">
+<img src="static/assets/images/likes-count.png" width="300" height="auto">
 </p>
 
-4. As a User I can view comments on recipes so that I can read other users opinions
+4. As a User I can view the number of comments (approved and publiced) on recipes so that I can see which recipes are the most commented.
+<p align="center">
+<img src="static/assets/images/comments-count.png" width="300" height="auto">
+</p>
+
+5. As a User I can view comments on recipes so that I can read other users opinions
 <p align="center">
 <img src="static/assets/images/comment.png" width="300" height="auto">
 </p>
 
-5. As a User I can see that my easily see a message after adding a recipe as well as edit or delete a recipe or comment so I can see it has been successfull
+6. As a User I can see that my easily see a message after adding a recipe as well as edit or delete a recipe or comment so I can see it has been successfull
 <p align="center">
 <img src="static/assets/images/add-recipe-message.png" width="500" height="auto">
 </p>
@@ -413,7 +422,7 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 <img src="static/assets/images/delete-comment-message.png" width="500" height="100%">
 </p>
 
-6. As a User I can get an error message when trying to add a recipe and not having filled in all the fields (or  using a title that already exists) so that I easily can see that a field is missing and correct that or change the title
+7. As a User I can get an error message when trying to add a recipe and not having filled in all the fields (or  using a title that already exists) so that I easily can see that a field is missing and correct that or change the title
 <p align="center">
 <img src="static/assets/images/add-recipe-form-message.png" width="500" height="auto">
 </p>
