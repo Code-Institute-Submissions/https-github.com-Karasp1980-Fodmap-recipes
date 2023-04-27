@@ -1,10 +1,11 @@
-#Fodmap recipes <img src="" style="width: 40px;height:40px;">
+
+# Welcome to Fodmap recipes
+
+
+![Mockup image](static/assets/images/fodmap-recipes.png)
 
 
 💻 [Visit live website](https://fodmap-recipes.herokuapp.com)
-
-![Mockup image]()
-
 
 ## Table of Contents
   - [About](#about)
@@ -339,16 +340,6 @@ Overall the results are very good for the 4 values even if the results shifted a
 <details><summary>View results</summary>
 
 ![Lighthouse](static/assets/images/lighthouse.png)
-
-
-
-</details>
-
-#### Mobile
-<details><summary>View results</summary>
-
-
-
 </details>
 
 
@@ -395,7 +386,7 @@ This was tested by accessing the Django Admin Panel. By creating a Superuser we 
 <img src="static/assets/images/likes-count.png" width="300" height="auto">
 </p>
 
-4. As a User I can view the number of comments (approved and publiced) on recipes so that I can see which recipes are the most commented.
+4. As a User I can view the number of comments (approved and publiced, if not approved the comment is not counted) on recipes so that I can see which recipes are the most commented.
 <p align="center">
 <img src="static/assets/images/comments-count.png" width="300" height="auto">
 </p>
