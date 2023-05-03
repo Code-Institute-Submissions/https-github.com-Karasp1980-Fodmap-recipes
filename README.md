@@ -36,7 +36,7 @@
 
 ### About
 
-Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy to find recipes that are Fodmap friendly. This site should be both inspiering and informative and make it easy to find tasty Fodmap recipes.  The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at all the recipes uploaded and the About Fodmap site and search function is open to all users. The site provides healthy recipes beneficial to all users in different ages, and weather you follow the Fodmap diet or not.
+Fodmap is a diet to reduce symphtoms when having IBS and it is not always easy to find recipes that are Fodmap friendly. This site should be both inspiering and informative and make it easy to find tasty Fodmap recipes.  The site provides the user the oportunity to easy register an account. When logged in the user can upload their own recipe posts on the site (which the user then can update/edit/delete), comment and like other recipes and also watch their own liked/favourite recipes. If the user prefers not to register an account they can still look at all the recipes uploaded and the About Fodmap site and the search function is open to all users. The site provides healthy recipes beneficial to all users in different ages, and weather you follow the Fodmap diet or not.
 
 ### User Goals
 
@@ -96,7 +96,7 @@ Google Fonts were implemented on the website. Lobster and Oswald with sans-serif
 
 #### Website pages
 
-Homepage, About Fodmap, Recipes, Add recipe, Recipe details, Favourite recipes, My recipes, search
+Homepage, About Fodmap, Recipes, Add recipe, Recipe details, Favourite recipes, My recipes, Search
 
 
 #### Database
@@ -124,7 +124,6 @@ Wireframes for each device are linked here:
 
 - HTML
 - CSS
-- Javascript
 - Python 
 - Django 
 
@@ -154,7 +153,7 @@ Wireframes for each device are linked here:
   - [JShint](https://jshint.com/) for JavaScript quality
   - [PEP8](http://pep8online.com/) to check code against Python conventions
   - [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code
-  - [Wave Validator](https://wave.webaim.org/) to evaluate accessibility
+  - [Am I responsive](https://ui.dev/amiresponsive) to evaluate responsiveness
 
 ##### Back to [top](#table-of-contents)
 
@@ -562,13 +561,13 @@ The image used are taken from:
 
 #### Recipes
 The recipes are taken from:
-* [BBC good food](https://www.bbcgoodfood.com)
 * [Monash University](https://www.monashfodmap.com) 
 
 #### Facts
 The facts about Fodmap were taken from:
 * [Cleveland clinic](https://my.clevelandclinic.org/health/treatments/22466-low-fodmap-diet) 
 * [Monash University](https://www.monashfodmap.com) 
+* [Low Fodmap A to Z app](https://play.google.com/store/apps/details?id=uk.co.temeraire1798.fodmapaz&hl=en_US) 
 
 #### Ohter
 The following sites has also been helpful:
